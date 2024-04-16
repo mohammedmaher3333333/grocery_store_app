@@ -6,13 +6,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await EnvVariable.instance.init(envType: EnvTypeEnum.dev);
   await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
+   options: DefaultFirebaseOptions.currentPlatform,
   );
-  await SystemChrome.setPreferredOrientations(
-    [DeviceOrientation.portraitDown, DeviceOrientation.portraitUp],
-  ).then((_) {
-    runApp(const GroceryStoreApp());
-  });
+  runApp(const GroceryStoreApp());
 }
