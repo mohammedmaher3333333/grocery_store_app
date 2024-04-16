@@ -18,5 +18,9 @@ void main() async {
   ).then((_) {
     runApp(const GroceryStoreApp());
   });
+  await Firebase.initializeApp(
+   options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(const GroceryStoreApp());
 }
 
