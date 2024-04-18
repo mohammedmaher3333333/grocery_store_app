@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_store_app/core/app/env.variables.dart';
 
 class GroceryStoreApp extends StatelessWidget {
   const GroceryStoreApp({super.key});
@@ -6,6 +7,7 @@ class GroceryStoreApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: EnvVariable.instance.debugMode,
       title: 'Grocery Store',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
