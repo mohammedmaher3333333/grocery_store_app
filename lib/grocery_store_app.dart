@@ -3,6 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocery_store_app/common/screens/no_network_screen.dart';
 import 'package:grocery_store_app/core/app/connectivity_controller.dart';
 import 'package:grocery_store_app/core/app/env.variables.dart';
+import 'package:grocery_store_app/style/fonts/font_family_helper.dart';
+import 'package:grocery_store_app/style/fonts/font_weight_helper.dart';
 
 class GroceryStoreApp extends StatelessWidget {
   const GroceryStoreApp({super.key});
@@ -37,6 +39,41 @@ class GroceryStoreApp extends StatelessWidget {
                 appBar: AppBar(
                   centerTitle: true,
                   title: const Text("GroceryStore"),
+                ),
+                body: Center(
+                  child: Column(
+                    children: [
+                      Text(
+                        "old text",
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold
+                        ),
+                      ),
+                      Text(
+                        "محمد ماهر",
+                        style: TextStyle(
+                          fontSize: 20,
+                        ),
+                      ),
+                      Text(
+                        "old text",
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontFamily: FontFamilyHelper.poppinsEnglish,
+                          fontWeight: FontWeightHelper.bold,
+                        ),
+                      ),
+                      Text(
+                        "محمد ماهر",
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontFamily: FontFamilyHelper.cairoArabic,
+                          fontWeight: FontWeightHelper.bold,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
