@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocery_store_app/common/screens/no_network_screen.dart';
 import 'package:grocery_store_app/core/app/connectivity_controller.dart';
 import 'package:grocery_store_app/core/app/env.variables.dart';
@@ -12,27 +13,31 @@ class GroceryStoreApp extends StatelessWidget {
       valueListenable: ConnectivityController.instance.isConnected,
       builder: (_, value, __) {
         if (value) {
-          return MaterialApp(
-            debugShowCheckedModeBanner: EnvVariable.instance.debugMode,
-            title: 'Grocery Store',
-            theme: ThemeData(
-              colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-              useMaterial3: true,
-            ),
-            builder: (context, widget) {
-              return Scaffold(
-                body: Builder(
-                  builder: (context) {
-                    ConnectivityController.instance.init();
-                    return widget!;
-                  },
+          return ScreenUtilInit(
+            designSize: Size(375, 812),
+            minTextAdapt: true,
+            child: MaterialApp(
+              debugShowCheckedModeBanner: EnvVariable.instance.debugMode,
+              title: 'Grocery Store',
+              theme: ThemeData(
+                colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+                useMaterial3: true,
+              ),
+              builder: (context, widget) {
+                return Scaffold(
+                  body: Builder(
+                    builder: (context) {
+                      ConnectivityController.instance.init();
+                      return widget!;
+                    },
+                  ),
+                );
+              },
+              home: Scaffold(
+                appBar: AppBar(
+                  centerTitle: true,
+                  title: const Text("GroceryStore"),
                 ),
-              );
-            },
-            home: Scaffold(
-              appBar: AppBar(
-                centerTitle: true,
-                title: const Text("GroceryStore"),
               ),
             ),
           );
