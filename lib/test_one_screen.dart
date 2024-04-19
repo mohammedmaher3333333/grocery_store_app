@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_store_app/extensions/context_extension.dart';
+import 'package:grocery_store_app/core/extensions/context_extension.dart';
+import 'package:grocery_store_app/core/language/lang_keys.dart';
 import 'package:grocery_store_app/routes/app_routes.dart';
 
 class TestOne extends StatelessWidget {
@@ -21,9 +22,13 @@ class TestOne extends StatelessWidget {
                 style: TextStyle(color: context.color.mainColor, fontSize: 20),
               ),
               onPressed: () {
-                  context.pushName(AppRoutes.testTwo);
-                  },
+                context.pushName(AppRoutes.testTwo);
+              },
             ),
+          ),
+          Text(
+            context.translate(LangKeys.appName),
+            style: TextStyle(color: Colors.black, fontSize: 40),
           ),
           Image.asset(context.assets.testImage ?? ''),
         ],

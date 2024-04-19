@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocery_store_app/common/screens/no_network_screen.dart';
 import 'package:grocery_store_app/core/app/connectivity_controller.dart';
 import 'package:grocery_store_app/core/app/env.variables.dart';
+import 'package:grocery_store_app/core/language/app_localizations_setup.dart';
 import 'package:grocery_store_app/routes/app_routes.dart';
 import 'package:grocery_store_app/style/fonts/font_family_helper.dart';
 import 'package:grocery_store_app/style/fonts/font_weight_helper.dart';
@@ -24,13 +25,23 @@ class GroceryStoreApp extends StatelessWidget {
               debugShowCheckedModeBanner: EnvVariable.instance.debugMode,
               title: 'Grocery Store',
               theme: themeLight(),
+
+              locale: Locale("ar"),
+              supportedLocales: AppLocalizationsSetup.supportedLocales,
+              localeResolutionCallback: AppLocalizationsSetup.localeResolutionCallback,
+              localizationsDelegates: AppLocalizationsSetup.localizationsDelegates,
+
               builder: (context, widget) {
-                return Scaffold(
-                  body: Builder(
-                    builder: (context) {
-                      ConnectivityController.instance.init();
-                      return widget!;
-                    },
+                return GestureDetector(
+                  onTap: (){FocusManager.instance.primaryFocus?.unfocus();
+                  },
+                  child: Scaffold(
+                    body: Builder(
+                      builder: (context) {
+                        ConnectivityController.instance.init();
+                        return widget!;
+                      },
+                    ),
                   ),
                 );
               },
