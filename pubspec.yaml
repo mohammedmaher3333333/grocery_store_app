@@ -65,7 +65,6 @@ flutter:
     - assets/images/customer/
     - assets/svg/
 
-
   fonts:
     # Arabic Font
     - family: Cairo
