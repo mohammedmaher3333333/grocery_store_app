@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:grocery_store_app/common/screens/no_network_screen.dart';
 import 'package:grocery_store_app/core/app/connectivity_controller.dart';
 import 'package:grocery_store_app/core/app/env.variables.dart';
+import 'package:grocery_store_app/core/common/screens/no_network_screen.dart';
 import 'package:grocery_store_app/core/language/app_localizations_setup.dart';
-import 'package:grocery_store_app/routes/app_routes.dart';
-import 'package:grocery_store_app/style/fonts/font_family_helper.dart';
-import 'package:grocery_store_app/style/fonts/font_weight_helper.dart';
-import 'package:grocery_store_app/style/theme/app_theme.dart';
+import 'package:grocery_store_app/core/routes/app_routes.dart';
+import 'package:grocery_store_app/core/style/theme/app_theme.dart';
+
 
 class GroceryStoreApp extends StatelessWidget {
   const GroceryStoreApp({super.key});

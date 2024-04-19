@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_store_app/core/extensions/context_extension.dart';
 import 'package:grocery_store_app/core/language/lang_keys.dart';
-import 'package:grocery_store_app/routes/app_routes.dart';
+import 'package:grocery_store_app/core/routes/app_routes.dart';
 
 class TestOne extends StatelessWidget {
   const TestOne({super.key});

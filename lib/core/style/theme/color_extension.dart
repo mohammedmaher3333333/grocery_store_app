@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_store_app/style/colors/colors_dark.dart';
-import 'package:grocery_store_app/style/colors/colors_light.dart';
+import 'package:grocery_store_app/core/style/colors/colors_dark.dart';
+import 'package:grocery_store_app/core/style/colors/colors_light.dart';
 
 class MyColors extends ThemeExtension<MyColors> {
   const MyColors({

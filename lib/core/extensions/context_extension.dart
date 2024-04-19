@@ -1,8 +1,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:grocery_store_app/core/language/app_localizations.dart';
-import 'package:grocery_store_app/style/theme/assets_extension.dart';
-import 'package:grocery_store_app/style/theme/color_extension.dart';
+import 'package:grocery_store_app/core/style/theme/assets_extension.dart';
+import 'package:grocery_store_app/core/style/theme/color_extension.dart';
+
 
 extension ContextExt on BuildContext {
   //color
@@ -10,6 +11,9 @@ extension ContextExt on BuildContext {
 
   // images
   MyAssets get assets => Theme.of(this).extension<MyAssets>()!;
+
+  // style
+  TextStyle get textStyle => Theme.of(this).textTheme.displaySmall!;
 
   //Language
   String translate(String langkey) {

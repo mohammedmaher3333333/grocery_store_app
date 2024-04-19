@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_store_app/common/screens/under_build_screen.dart';
-import 'package:grocery_store_app/routes/base_routes.dart';
+import 'package:grocery_store_app/core/common/screens/under_build_screen.dart';
+import 'package:grocery_store_app/core/routes/base_routes.dart';
 import 'package:grocery_store_app/test_one_screen.dart';
 import 'package:grocery_store_app/test_two_screen.dart';
 

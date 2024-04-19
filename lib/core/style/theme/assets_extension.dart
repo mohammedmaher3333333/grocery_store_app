@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_store_app/style/images/app_images.dart';
+import 'package:grocery_store_app/core/style/images/app_images.dart';
 
 class MyAssets extends ThemeExtension<MyAssets> {
   const MyAssets({
