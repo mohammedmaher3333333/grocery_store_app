@@ -6,6 +6,7 @@ import 'package:grocery_store_app/core/app/env.variables.dart';
 import 'package:grocery_store_app/routes/app_routes.dart';
 import 'package:grocery_store_app/style/fonts/font_family_helper.dart';
 import 'package:grocery_store_app/style/fonts/font_weight_helper.dart';
+import 'package:grocery_store_app/style/theme/app_theme.dart';
 
 class GroceryStoreApp extends StatelessWidget {
   const GroceryStoreApp({super.key});
@@ -22,10 +23,7 @@ class GroceryStoreApp extends StatelessWidget {
             child: MaterialApp(
               debugShowCheckedModeBanner: EnvVariable.instance.debugMode,
               title: 'Grocery Store',
-              theme: ThemeData(
-                colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-                useMaterial3: true,
-              ),
+              theme: themeLight(),
               builder: (context, widget) {
                 return Scaffold(
                   body: Builder(
