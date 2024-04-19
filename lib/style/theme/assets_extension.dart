@@ -1,39 +1,46 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_store_app/style/images/app_images.dart';
 
-class MyImages extends ThemeExtension<MyImages> {
-  const MyImages({
-    required this.testImage,
+class MyAssets extends ThemeExtension<MyAssets> {
+  const MyAssets({
+    required this.bigNavBar,
+    required this.homeBg,
   });
 
-  final String? testImage;
+  final String? bigNavBar;
+  final String? homeBg;
 
   @override
-  ThemeExtension<MyImages> copyWith({
-    String? testImage,
+  ThemeExtension<MyAssets> copyWith({
+    String? bigNavBar,
+    String? homeBg,
   }) {
-    return MyImages(
-      testImage: testImage,
+    return MyAssets(
+      bigNavBar: bigNavBar,
+      homeBg: homeBg,
     );
   }
 
   @override
-  ThemeExtension<MyImages> lerp(
-    covariant ThemeExtension<MyImages>? other,
-    double t,
-  ) {
-    if (other is! MyImages) {
+  ThemeExtension<MyAssets> lerp(
+      covariant ThemeExtension<MyAssets>? other,
+      double t,
+      ) {
+    if (other is! MyAssets) {
       return this;
     }
-    return MyImages(
-      testImage: testImage,
+    return MyAssets(
+      bigNavBar: bigNavBar,
+      homeBg: homeBg,
     );
   }
 
-  static const MyImages dark = MyImages(
-    testImage: AppImages.testDark,
+  static const MyAssets dark = MyAssets(
+    bigNavBar: AppImages.bigIconNavBarDark,
+    homeBg: AppImages.homeBgDark,
   );
-  static const MyImages light = MyImages(
-    testImage: AppImages.testLight,
+  static const MyAssets light = MyAssets(
+    bigNavBar: AppImages.bigIconNavBarLight,
+    homeBg: AppImages.homeBgLight,
   );
 }

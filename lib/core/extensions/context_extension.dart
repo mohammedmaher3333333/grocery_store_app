@@ -9,7 +9,7 @@ extension ContextExt on BuildContext {
   MyColors get color => Theme.of(this).extension<MyColors>()!;
 
   // images
-  MyImages get assets => Theme.of(this).extension<MyImages>()!;
+  MyAssets get assets => Theme.of(this).extension<MyAssets>()!;
 
   //Language
   String translate(String langkey) {
@@ -27,7 +27,7 @@ extension ContextExt on BuildContext {
   }
 
   Future<dynamic> pushNamedAndRemoveUntil(String routeName,
-      {Object? arguments}) {
+      {Object? arguments,}) {
     return Navigator.of(this)
         .pushNamedAndRemoveUntil(routeName, (route) => false);
   }

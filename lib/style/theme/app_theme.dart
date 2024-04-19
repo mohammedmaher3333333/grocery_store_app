@@ -8,7 +8,7 @@ import 'package:grocery_store_app/style/theme/color_extension.dart';
 ThemeData themeDark() {
   return ThemeData(
     scaffoldBackgroundColor: ColorsDark.mainColor,
-    extensions: const <ThemeExtension<dynamic>>[MyColors.dark, MyImages.dark],
+    extensions: const <ThemeExtension<dynamic>>[MyColors.dark, MyAssets.dark],
     useMaterial3: true,
   );
 }
@@ -16,7 +16,7 @@ ThemeData themeDark() {
 ThemeData themeLight() {
   return ThemeData(
     scaffoldBackgroundColor: ColorsLight.mainColor,
-    extensions: const <ThemeExtension<dynamic>>[MyColors.light, MyImages.light],
+    extensions: const <ThemeExtension<dynamic>>[MyColors.light, MyAssets.light],
     useMaterial3: true,
   );
 }
