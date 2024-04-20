@@ -2,6 +2,9 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grocery_store_app/core/app/bloc_observer.dart';
 import 'package:grocery_store_app/core/app/env.variables.dart';
+import 'package:grocery_store_app/core/di/injection_container.dart';
+import 'package:grocery_store_app/core/service/shared_pref/shared_pref.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'firebase_options.dart';
 import 'package:flutter/material.dart';
@@ -18,6 +21,10 @@ void main() async {
   await Firebase.initializeApp(
    options: DefaultFirebaseOptions.currentPlatform,
   );
+
+  await SharedPref().instantiatePreferences();
+
+  await setupInjector();
 
   Bloc.observer= AppBlocObserver();
 

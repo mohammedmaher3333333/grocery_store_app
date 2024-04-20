@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grocery_store_app/core/app/app_cubit.dart';
 import 'package:grocery_store_app/core/common/animations/animate_do.dart';
 import 'package:grocery_store_app/core/common/widgets/custom_linear_button.dart';
 import 'package:grocery_store_app/core/common/widgets/text_app.dart';
@@ -13,32 +15,39 @@ class DarkAndLangButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   // final cubit = context.read<AppCubit>();
+    final cubit = context.read<AppCubit>();
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         // Dark Mode Button
-
-      CustomFadeInRight(
+        BlocBuilder(
+          bloc: cubit,
+          builder: (context, state) {
+            return CustomFadeInRight(
               duration: 400,
               child: CustomLinearButton(
-                onPressed: (){},//cubit.changeAppThemeMode,
+                onPressed: cubit.changeAppThemeMode,
                 child: Icon(
-                  Icons.light_mode_rounded,
+                  cubit.isDark
+                      ? Icons.light_mode_rounded
+                      : Icons.dark_mode_rounded,
                   color: Colors.white,
                 ),
               ),
-      ),
+            );
+          },
+        ),
+
         //Language Button
         CustomFadeInLeft(
           duration: 400,
           child: CustomLinearButton(
             onPressed: () {
-              // if (AppLocalizations.of(context)!.isEnLocale) {
-              //   cubit.toArabic();
-              // } else {
-              //   cubit.toEnglish();
-              // }
+              if (AppLocalizations.of(context)!.isEnLocale) {
+                cubit.toArabic();
+              } else {
+                cubit.toEnglish();
+              }
             },
             height: 44.h,
             width: 100.w,
