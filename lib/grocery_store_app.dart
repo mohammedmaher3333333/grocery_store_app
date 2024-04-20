@@ -25,7 +25,7 @@ class GroceryStoreApp extends StatelessWidget {
               title: 'Grocery Store',
               theme: themeLight(),
 
-              locale: Locale("ar"),
+              locale: Locale("en"),
               supportedLocales: AppLocalizationsSetup.supportedLocales,
               localeResolutionCallback: AppLocalizationsSetup.localeResolutionCallback,
               localizationsDelegates: AppLocalizationsSetup.localizationsDelegates,
@@ -45,7 +45,7 @@ class GroceryStoreApp extends StatelessWidget {
                 );
               },
               onGenerateRoute: AppRoutes.onGenerateRoute,
-              initialRoute: AppRoutes.testOne,
+              initialRoute: AppRoutes.login,
             ),
           );
         } else {
