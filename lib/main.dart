@@ -1,4 +1,6 @@
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:grocery_store_app/core/app/bloc_observer.dart';
 import 'package:grocery_store_app/core/app/env.variables.dart';
 
 import 'firebase_options.dart';
@@ -16,6 +18,8 @@ void main() async {
   await Firebase.initializeApp(
    options: DefaultFirebaseOptions.currentPlatform,
   );
+
+  Bloc.observer= AppBlocObserver();
 
   await SystemChrome.setPreferredOrientations(
     [DeviceOrientation.portraitDown, DeviceOrientation.portraitUp],
