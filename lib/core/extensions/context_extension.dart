@@ -1,15 +1,19 @@
 
 import 'package:flutter/material.dart';
 import 'package:grocery_store_app/core/language/app_localizations.dart';
-import 'package:grocery_store_app/style/theme/assets_extension.dart';
-import 'package:grocery_store_app/style/theme/color_extension.dart';
+import 'package:grocery_store_app/core/style/theme/assets_extension.dart';
+import 'package:grocery_store_app/core/style/theme/color_extension.dart';
+
 
 extension ContextExt on BuildContext {
   //color
   MyColors get color => Theme.of(this).extension<MyColors>()!;
 
   // images
-  MyImages get assets => Theme.of(this).extension<MyImages>()!;
+  MyAssets get assets => Theme.of(this).extension<MyAssets>()!;
+
+  // style
+  TextStyle get textStyle => Theme.of(this).textTheme.displaySmall!;
 
   //Language
   String translate(String langkey) {
@@ -27,7 +31,7 @@ extension ContextExt on BuildContext {
   }
 
   Future<dynamic> pushNamedAndRemoveUntil(String routeName,
-      {Object? arguments}) {
+      {Object? arguments,}) {
     return Navigator.of(this)
         .pushNamedAndRemoveUntil(routeName, (route) => false);
   }
