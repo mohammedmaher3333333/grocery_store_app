@@ -14,23 +14,7 @@ class UserAvararImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: (){
-        PickImageUtils().pickImage();
-      },
-      child: CustomFadeInDown(
-        duration: 500, child: CircleAvatar(
-        radius: 38,
-        backgroundImage: NetworkImage('https://www.w3schools.com/howto/img_avatar.png'),
-      ),
-
-      ),
-    );
-  }
-}
-
-      /*
-      CustomFadeInDown(
+    return CustomFadeInDown(
       duration: 500,
       child: BlocConsumer<UploadImageCubit, UploadImageState>(
         listener: (context, state) {
@@ -127,4 +111,4 @@ class UserAvararImage extends StatelessWidget {
     );
   }
 }
-*/
+
