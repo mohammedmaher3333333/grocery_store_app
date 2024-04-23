@@ -7,10 +7,9 @@ import 'package:grocery_store_app/core/common/toast/show_toast.dart';
 import 'package:grocery_store_app/core/extensions/context_extension.dart';
 import 'package:grocery_store_app/core/language/lang_keys.dart';
 import 'package:grocery_store_app/core/style/images/app_images.dart';
-import 'package:grocery_store_app/core/utils/image_pick.dart';
 
-class UserAvararImage extends StatelessWidget {
-  const UserAvararImage({super.key});
+class UserAvatarImage extends StatelessWidget {
+  const UserAvatarImage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,21 +17,25 @@ class UserAvararImage extends StatelessWidget {
       duration: 500,
       child: BlocConsumer<UploadImageCubit, UploadImageState>(
         listener: (context, state) {
-          state.whenOrNull(success: () {
-            ShowToast.showToastSuccessTop(
-              message: context.translate(LangKeys.imageUploaded),
-              seconds: 2,
-            );
-          }, removeImage: (removeImage) {
-            ShowToast.showToastSuccessTop(
-              message: context.translate(LangKeys.imageRemoved),
-              seconds: 2,
-            );
-          }, error: (errorMessage) {
-            ShowToast.showToastErrorTop(
-              message: errorMessage,
-            );
-          });
+          state.whenOrNull(
+            success: () {
+              ShowToast.showToastSuccessTop(
+                message: context.translate(LangKeys.imageUploaded),
+                seconds: 2,
+              );
+            },
+            removeImage: (removeImage) {
+              ShowToast.showToastSuccessTop(
+                message: context.translate(LangKeys.imageRemoved),
+                seconds: 2,
+              );
+            },
+            error: (errorMessage) {
+              ShowToast.showToastErrorTop(
+                message: errorMessage,
+              );
+            },
+          );
         },
         builder: (context, state) {
           final isImageUploaded =
@@ -111,4 +114,3 @@ class UserAvararImage extends StatelessWidget {
     );
   }
 }
-
