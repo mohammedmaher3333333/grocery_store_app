@@ -1,40 +1,41 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grocery_store_app/core/app/upload_image/cubit/upload_image_cubit.dart';
 import 'package:grocery_store_app/core/common/animations/animate_do.dart';
+import 'package:grocery_store_app/core/common/toast/show_toast.dart';
+import 'package:grocery_store_app/core/extensions/context_extension.dart';
+import 'package:grocery_store_app/core/language/lang_keys.dart';
 import 'package:grocery_store_app/core/style/images/app_images.dart';
 
-class UserAvararImage extends StatelessWidget {
-  const UserAvararImage({super.key});
+class UserAvatarImage extends StatelessWidget {
+  const UserAvatarImage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return CustomFadeInDown(
-        duration: 500,
-        child: CircleAvatar(
-        radius: 38,
-        backgroundImage: const AssetImage(AppImages.userAvatar),
-    )
-    );
-  }
-}
-      /*CustomFadeInDown(
       duration: 500,
       child: BlocConsumer<UploadImageCubit, UploadImageState>(
         listener: (context, state) {
-          state.whenOrNull(success: () {
-            ShowToast.showToastSuccessTop(
-              message: context.translate(LangKeys.imageUploaded),
-              seconds: 2,
-            );
-          }, removeImage: (removeImage) {
-            ShowToast.showToastSuccessTop(
-              message: context.translate(LangKeys.imageRemoved),
-              seconds: 2,
-            );
-          }, error: (errorMessage) {
-            ShowToast.showToastErrorTop(
-              message: errorMessage,
-            );
-          });
+          state.whenOrNull(
+            success: () {
+              ShowToast.showToastSuccessTop(
+                message: context.translate(LangKeys.imageUploaded),
+                seconds: 2,
+              );
+            },
+            removeImage: (removeImage) {
+              ShowToast.showToastSuccessTop(
+                message: context.translate(LangKeys.imageRemoved),
+                seconds: 2,
+              );
+            },
+            error: (errorMessage) {
+              ShowToast.showToastErrorTop(
+                message: errorMessage,
+              );
+            },
+          );
         },
         builder: (context, state) {
           final isImageUploaded =
@@ -112,4 +113,4 @@ class UserAvararImage extends StatelessWidget {
       ),
     );
   }
-}*/
+}

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:grocery_store_app/core/app/upload_image/cubit/upload_image_cubit.dart';
 import 'package:grocery_store_app/core/common/screens/under_build_screen.dart';
 import 'package:grocery_store_app/core/di/injection_container.dart';
 import 'package:grocery_store_app/core/routes/base_routes.dart';
@@ -34,8 +35,19 @@ class AppRoutes {
 
       case signUp:
         return BaseRoute(
-          page: const SignUpScreen(),
+          page: MultiBlocProvider(
+            providers: [
+              BlocProvider(
+                create: (context) => sl<UploadImageCubit>(),
+              ),
+              BlocProvider(
+                create: (context) => sl<AuthBloc>(),
+              ),
+            ],
+            child: const SignUpScreen(),
+          ),
         );
+
       case homeAdmin:
         return BaseRoute(
           page: const HomeAdminScreen(),
@@ -45,20 +57,6 @@ class AppRoutes {
           page: const HomeCustomerScreen(),
         );
 
-      // case signUp:
-      //   return BaseRoute(
-      //     page: MultiBlocProvider(
-      //       providers: [
-      //         BlocProvider(
-      //           create: (context) => sl<UploadImageCubit>(),
-      //         ),
-      //         BlocProvider(
-      //           create: (context) => sl<AuthBloc>(),
-      //         ),
-      //       ],
-      //       child: const SignUpScreen(),
-      //     ),
-      //   );
       // case homeAdmin:
       //   return BaseRoute(page: const HomeAdminScreen());
       // case mainCustomer:

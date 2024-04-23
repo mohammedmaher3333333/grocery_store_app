@@ -1,9 +1,11 @@
 import 'package:grocery_store_app/features/auth/data/models/login_request_body.dart';
+import 'package:grocery_store_app/features/auth/data/models/sign_up_request_body.dart';
 
 class AuthQueries {
   factory AuthQueries() {
     return _instance;
   }
+
   const AuthQueries._();
 
   static const AuthQueries _instance = AuthQueries._();
@@ -24,31 +26,31 @@ class AuthQueries {
       },
     };
   }
-  //
-  // Map<String, dynamic> signUpMapQuery({required SignUpRequestBody body}) {
-  //   return {
-  //     'query': r'''
-  //             mutation SignUp($name: String!, $email: String! , $password: String!, $avatar: String!) {
-  //             addUser(
-  //               data: {
-  //                 name: $name
-  //                 email: $email
-  //                 password:$password
-  //                 avatar: $avatar
-  //                 role: customer
-  //               }
-  //             ) {
-  //               id
-  //               email
-  //             }
-  //           }
-  //       ''',
-  //     'variables': {
-  //       'name': body.name,
-  //       'email': body.email,
-  //       'password': body.password,
-  //       'avatar': body.avatar,
-  //     },
-  //   };
-  // }
+
+  Map<String, dynamic> signUpMapQuery({required SignUpRequestBody body}) {
+    return {
+      'query': r'''
+              mutation SignUp($name: String!, $email: String! , $password: String!, $avatar: String!) {
+              addUser(
+                data: {
+                  name: $name
+                  email: $email
+                  password:$password
+                  avatar: $avatar
+                  role: customer
+                }
+              ) {
+                id
+                email
+              }
+            }
+        ''',
+      'variables': {
+        'name': body.name,
+        'email': body.email,
+        'password': body.password,
+        'avatar': body.avatar,
+      },
+    };
+  }
 }
