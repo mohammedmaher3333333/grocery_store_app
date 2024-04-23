@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:grocery_store_app/core/app/upload_image/model/upload_image_response.dart';
 import 'package:grocery_store_app/features/auth/data/models/login_response.dart';
 import 'package:grocery_store_app/features/auth/data/models/user_role_response.dart';
 import 'package:retrofit/retrofit.dart';
@@ -20,11 +21,11 @@ abstract class ApiService {
   @GET('/api/v1/auth/profile')
   Future<UserRoleResponse> userRole();
 
-  // @POST('/api/v1/files/upload')
-  // Future<UploadImageResourse> uploadImage(
-  //   @Body() FormData file,
-  // );
-  //
+  @POST('/api/v1/files/upload')
+  Future<UploadImageResourse> uploadImage(
+    @Body() FormData file,
+  );
+
   // @POST(graphql)
   // Future<SignUpResponse> signUp(
   //   @Body() Map<String, dynamic> mutation,

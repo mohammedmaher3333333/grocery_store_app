@@ -61,8 +61,10 @@ class GroceryStoreApp extends StatelessWidget {
                         ),
                       );
                     },
+                    navigatorKey: sl<GlobalKey<NavigatorState>>(),
                     onGenerateRoute: AppRoutes.onGenerateRoute,
-                    initialRoute: SharedPref().getString(PrefKeys.accessToken) !=null
+                    initialRoute: SharedPref()
+                        .getString(PrefKeys.accessToken) !=null
                         ? SharedPref().getString(PrefKeys.userRole) != 'admin'
                         ? AppRoutes.homeCustomer
                         : AppRoutes.homeAdmin

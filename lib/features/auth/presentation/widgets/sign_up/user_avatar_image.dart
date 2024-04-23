@@ -1,22 +1,36 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grocery_store_app/core/app/upload_image/cubit/upload_image_cubit.dart';
 import 'package:grocery_store_app/core/common/animations/animate_do.dart';
+import 'package:grocery_store_app/core/common/toast/show_toast.dart';
+import 'package:grocery_store_app/core/extensions/context_extension.dart';
+import 'package:grocery_store_app/core/language/lang_keys.dart';
 import 'package:grocery_store_app/core/style/images/app_images.dart';
+import 'package:grocery_store_app/core/utils/image_pick.dart';
 
 class UserAvararImage extends StatelessWidget {
   const UserAvararImage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return CustomFadeInDown(
-        duration: 500,
-        child: CircleAvatar(
+    return GestureDetector(
+      onTap: (){
+        PickImageUtils().pickImage();
+      },
+      child: CustomFadeInDown(
+        duration: 500, child: CircleAvatar(
         radius: 38,
-        backgroundImage: const AssetImage(AppImages.userAvatar),
-    )
+        backgroundImage: NetworkImage('https://www.w3schools.com/howto/img_avatar.png'),
+      ),
+
+      ),
     );
   }
 }
-      /*CustomFadeInDown(
+
+      /*
+      CustomFadeInDown(
       duration: 500,
       child: BlocConsumer<UploadImageCubit, UploadImageState>(
         listener: (context, state) {
@@ -112,4 +126,5 @@ class UserAvararImage extends StatelessWidget {
       ),
     );
   }
-}*/
+}
+*/
