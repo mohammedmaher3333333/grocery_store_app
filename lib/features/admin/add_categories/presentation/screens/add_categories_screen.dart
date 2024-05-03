@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_store_app/core/common/widgets/admin_app_bar.dart';
 import 'package:grocery_store_app/core/style/colors/colors_dark.dart';
+import 'package:grocery_store_app/features/admin/add_categories/presentation/refactors/add_categories_body.dart';
 
 class AddCategoriesScreen extends StatelessWidget {
   const AddCategoriesScreen({super.key});
@@ -14,12 +15,7 @@ class AddCategoriesScreen extends StatelessWidget {
         isMain: true,
         backgroundColor: ColorsDark.mainColor,
       ),
-      body: Center(
-        child: Text(
-          'AddCategories Screen',
-          style: TextStyle(color: Colors.white, fontSize: 20),
-        ),
-      ),
+      body: AddCategoriesBody(),
     );
   }
 }

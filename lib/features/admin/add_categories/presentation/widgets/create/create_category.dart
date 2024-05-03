@@ -1,3 +1,44 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grocery_store_app/core/common/widgets/custom_button.dart';
+import 'package:grocery_store_app/core/common/widgets/text_app.dart';
+import 'package:grocery_store_app/core/extensions/context_extension.dart';
+import 'package:grocery_store_app/core/style/colors/colors_dark.dart';
+import 'package:grocery_store_app/core/style/fonts/font_family_helper.dart';
+import 'package:grocery_store_app/core/style/fonts/font_weight_helper.dart';
+
+class CreateCategory extends StatelessWidget {
+  const CreateCategory({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        TextApp(
+          text: 'Get All Categories',
+          theme: context.textStyle.copyWith(
+            fontSize: 18.sp,
+            fontWeight: FontWeightHelper.medium,
+            fontFamily: FontFamilyHelper.poppinsEnglish,
+          ),
+        ),
+        CustomButton(
+          onPressed: () {
+            //TODO: create category bottom sheet
+          },
+          backgroundColor: ColorsDark.blueDark,
+          lastRadius: 10,
+          threeRadius: 10,
+          text: 'Add',
+          width: 90.w,
+          height: 35.h,
+        ),
+      ],
+    );
+  }
+}
+
 // import 'package:flutter/material.dart';
 // import 'package:flutter_bloc/flutter_bloc.dart';
 // import 'package:flutter_screenutil/flutter_screenutil.dart';
