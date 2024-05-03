@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_store_app/core/common/widgets/admin_app_bar.dart';
 import 'package:grocery_store_app/core/style/colors/colors_dark.dart';
+import 'package:grocery_store_app/features/admin/dashboard/presentation/refactors/dashboard_body.dart';
 
 class DashBoardScreen extends StatelessWidget {
   const DashBoardScreen({super.key});
@@ -10,17 +11,12 @@ class DashBoardScreen extends StatelessWidget {
     return const Scaffold(
       backgroundColor: ColorsDark.mainColor,
       appBar: AdminAppBar(
-        title: 'DashBoardScreen',
+        title: 'DashBoard',
         isMain: true,
         backgroundColor: ColorsDark.mainColor,
       ),
-      body: Center(
-        child: Text(
-          'DashBoard Screen',
-          style: TextStyle(color: Colors.white, fontSize: 20),
-        ),
-      ),
-    );
+        body: DashBoardBody());
+
   }
 }
 
@@ -28,7 +24,10 @@ class DashBoardScreen extends StatelessWidget {
 
 // import 'package:flutter/material.dart';
 // import 'package:flutter_bloc/flutter_bloc.dart';
+// import 'package:grocery_store_app/core/common/widgets/admin_app_bar.dart';
 // import 'package:grocery_store_app/core/di/injection_container.dart';
+// import 'package:grocery_store_app/core/style/colors/colors_dark.dart';
+// import 'package:grocery_store_app/features/admin/dashboard/presentation/refactors/dashboard_body.dart';
 //
 // class DashBoardScreen extends StatelessWidget {
 //   const DashBoardScreen({super.key});

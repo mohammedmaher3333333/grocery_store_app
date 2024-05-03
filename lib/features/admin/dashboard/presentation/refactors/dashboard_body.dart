@@ -1,6 +1,61 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grocery_store_app/core/style/images/app_images.dart';
+import 'package:grocery_store_app/features/admin/dashboard/presentation/widgets/dashboard_container.dart';
+
+class DashBoardBody extends StatelessWidget {
+  const DashBoardBody({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 20.h),
+      child: RefreshIndicator(
+        onRefresh: () async {},
+        child: ListView(
+          children: [
+            //Products
+            const DashBoardContiner(
+              image: AppImages.productsDrawer,
+              number: '0',
+              title: 'Products',
+              isLoading: false,
+            ),
+            SizedBox(height: 20.h),
+            //Categories
+            const DashBoardContiner(
+              image: AppImages.categoriesDrawer,
+              number: '0',
+              title: 'Categories',
+              isLoading: false,
+            ),
+            SizedBox(height: 20.h),
+            //Users
+            const DashBoardContiner(
+              image: AppImages.usersDrawer,
+              number: '0',
+              title: 'Users',
+              isLoading: false,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+
+
+
+
 // import 'package:flutter/material.dart';
 // import 'package:flutter_bloc/flutter_bloc.dart';
 // import 'package:flutter_screenutil/flutter_screenutil.dart';
+// import 'package:grocery_store_app/core/common/widgets/text_app.dart';
+// import 'package:grocery_store_app/core/extensions/context_extension.dart';
+// import 'package:grocery_store_app/core/style/images/app_images.dart';
+// import 'package:grocery_store_app/features/admin/dashboard/presentation/widgets/dashboard_container.dart';
 //
 // class DashBoardBody extends StatelessWidget {
 //   const DashBoardBody({super.key});
