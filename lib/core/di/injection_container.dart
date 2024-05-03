@@ -7,6 +7,11 @@ import 'package:grocery_store_app/core/app/upload_image/data_source/upload_image
 import 'package:grocery_store_app/core/app/upload_image/repo/upload_image_repo.dart';
 import 'package:grocery_store_app/core/service/graphql/api_service.dart';
 import 'package:grocery_store_app/core/service/graphql/dio_factory.dart';
+import 'package:grocery_store_app/features/admin/dashboard/data/data_soruce/dashboard_data_source.dart';
+import 'package:grocery_store_app/features/admin/dashboard/data/repos/dashboard_repo.dart';
+import 'package:grocery_store_app/features/admin/dashboard/presentation/bloc/categories_number/categories_number_bloc.dart';
+import 'package:grocery_store_app/features/admin/dashboard/presentation/bloc/products_number/products_number_bloc.dart';
+import 'package:grocery_store_app/features/admin/dashboard/presentation/bloc/users_number/users_number_bloc.dart';
 import 'package:grocery_store_app/features/auth/data/data_source/auth_data_source.dart';
 import 'package:grocery_store_app/features/auth/data/repos/auth_repo.dart';
 import 'package:grocery_store_app/features/auth/presentation/bloc/auth_bloc.dart';
@@ -16,7 +21,7 @@ final sl = GetIt.instance;
 Future<void> setupInjector() async {
   await _initCore();
   await _initAuth();
-  // await _initDashBoard();
+  await _initDashBoard();
   // await _initCategoriesAdmin();
   // await _initProductsAdmin();
   // await _initUsersAdmin();
@@ -52,16 +57,16 @@ Future<void> setupInjector() async {
      ..registerLazySingleton(() => AuthRepos(sl()))
      ..registerLazySingleton(() => AuthDataSource(sl()));
 }
-//
-// Future<void> _initDashBoard() async {
-//   sl
-//     ..registerLazySingleton(() => DashBoardDataSource(sl()))
-//     ..registerLazySingleton(() => DashBoardRepo(sl()))
-//     ..registerFactory(() => ProductsNumberBloc(sl()))
-//     ..registerFactory(() => CategoriesNumberBloc(sl()))
-//     ..registerFactory(() => UsersNumberBloc(sl()));
-// }
-//
+
+Future<void> _initDashBoard() async {
+  sl
+    ..registerLazySingleton(() => DashBoardDataSource(sl()))
+    ..registerLazySingleton(() => DashBoardRepo(sl()))
+    ..registerFactory(() => ProductsNumberBloc(sl()))
+    ..registerFactory(() => CategoriesNumberBloc(sl()))
+    ..registerFactory(() => UsersNumberBloc(sl()));
+}
+
 // Future<void> _initCategoriesAdmin() async {
 //   sl
 //     ..registerLazySingleton(() => CategoreisAdminRepo(sl()))
