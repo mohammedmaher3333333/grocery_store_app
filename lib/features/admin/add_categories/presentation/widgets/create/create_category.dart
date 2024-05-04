@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grocery_store_app/core/common/bottom_shet/custom_bottom_sheet.dart';
 import 'package:grocery_store_app/core/common/widgets/custom_button.dart';
 import 'package:grocery_store_app/core/common/widgets/text_app.dart';
 import 'package:grocery_store_app/core/extensions/context_extension.dart';
 import 'package:grocery_store_app/core/style/colors/colors_dark.dart';
 import 'package:grocery_store_app/core/style/fonts/font_family_helper.dart';
 import 'package:grocery_store_app/core/style/fonts/font_weight_helper.dart';
+import 'package:grocery_store_app/features/admin/add_categories/presentation/widgets/create/create_category_bottom_widget.dart';
 
 class CreateCategory extends StatelessWidget {
   const CreateCategory({super.key});
@@ -25,7 +27,10 @@ class CreateCategory extends StatelessWidget {
         ),
         CustomButton(
           onPressed: () {
-            //TODO: create category bottom sheet
+            CustomBottomSheet.showModalBottomSheetContainer(
+              context: context,
+              widget: const CreateCategoryBottomSheetWidget(),
+            );
           },
           backgroundColor: ColorsDark.blueDark,
           lastRadius: 10,
@@ -43,6 +48,8 @@ class CreateCategory extends StatelessWidget {
 // import 'package:flutter_bloc/flutter_bloc.dart';
 // import 'package:flutter_screenutil/flutter_screenutil.dart';
 // import 'package:grocery_store_app/core/app/upload_image/cubit/upload_image_cubit.dart';
+// import 'package:grocery_store_app/core/common/bottom_shet/custom_bottom_sheet.dart';
+// import 'package:grocery_store_app/core/common/widgets/custom_button.dart';
 // import 'package:grocery_store_app/core/common/widgets/text_app.dart';
 // import 'package:grocery_store_app/core/di/injection_container.dart';
 // import 'package:grocery_store_app/core/extensions/context_extension.dart';
