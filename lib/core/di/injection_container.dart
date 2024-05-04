@@ -9,7 +9,10 @@ import 'package:grocery_store_app/core/service/graphql/api_service.dart';
 import 'package:grocery_store_app/core/service/graphql/dio_factory.dart';
 import 'package:grocery_store_app/features/admin/add_categories/data/data_source/categories_admin_data_source.dart';
 import 'package:grocery_store_app/features/admin/add_categories/data/repos/categoreis_admin_repos.dart';
+import 'package:grocery_store_app/features/admin/add_categories/presentation/bloc/create_category/create_category_bloc.dart';
+import 'package:grocery_store_app/features/admin/add_categories/presentation/bloc/delete_category/delete_category_bloc.dart';
 import 'package:grocery_store_app/features/admin/add_categories/presentation/bloc/get_all_admin_categories/get_all_admin_categories_bloc.dart';
+import 'package:grocery_store_app/features/admin/add_categories/presentation/bloc/update_category/update_category_bloc.dart';
 import 'package:grocery_store_app/features/admin/dashboard/data/data_soruce/dashboard_data_source.dart';
 import 'package:grocery_store_app/features/admin/dashboard/data/repos/dashboard_repo.dart';
 import 'package:grocery_store_app/features/admin/dashboard/presentation/bloc/categories_number/categories_number_bloc.dart';
@@ -75,9 +78,9 @@ Future<void> _initCategoriesAdmin() async {
     ..registerLazySingleton(() => CategoreisAdminRepo(sl()))
     ..registerLazySingleton(() => CategoriesAdminDataSource(sl()))
     ..registerFactory(() => GetAllAdminCategoriesBloc(sl()))
-    // ..registerFactory(() => CreateCategoryBloc(sl()))
-    // ..registerFactory(() => DeleteCategoryBloc(sl()))
-    // ..registerFactory(() => UpdateCategoryBloc(sl()))
+    ..registerFactory(() => CreateCategoryBloc(sl()))
+    ..registerFactory(() => DeleteCategoryBloc(sl()))
+    ..registerFactory(() => UpdateCategoryBloc(sl()))
   ;
 }
 
