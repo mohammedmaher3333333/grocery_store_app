@@ -1,10 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grocery_store_app/core/common/bottom_shet/custom_bottom_sheet.dart';
 import 'package:grocery_store_app/core/common/widgets/custom_container_linear_admin.dart';
 import 'package:grocery_store_app/core/common/widgets/text_app.dart';
 import 'package:grocery_store_app/core/extensions/context_extension.dart';
 import 'package:grocery_store_app/core/style/fonts/font_family_helper.dart';
+import 'package:grocery_store_app/features/admin/add_categories/presentation/widgets/update/update_category_bottom_widget.dart';
 
 import '../../../../../core/style/fonts/font_weight_helper.dart';
 
@@ -56,7 +58,10 @@ class AddCatgeoryItem extends StatelessWidget {
                     //Update
                     InkWell(
                       onTap: () {
-                        //TODO: Update Category
+                        CustomBottomSheet.showModalBottomSheetContainer(
+                          context: context,
+                          widget: const UpdateCategoryBottomWidget(),
+                        );
                       },
                       child: const Icon(
                         Icons.edit,
