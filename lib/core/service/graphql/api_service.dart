@@ -6,6 +6,7 @@ import 'package:grocery_store_app/features/admin/add_products/data/models/get_al
 import 'package:grocery_store_app/features/admin/dashboard/data/models/categories_number_response.dart';
 import 'package:grocery_store_app/features/admin/dashboard/data/models/porducts_number_response.dart';
 import 'package:grocery_store_app/features/admin/dashboard/data/models/users_number_response.dart';
+import 'package:grocery_store_app/features/admin/users/data/models/get_all_users_response.dart';
 import 'package:grocery_store_app/features/auth/data/models/login_response.dart';
 import 'package:grocery_store_app/features/auth/data/models/sign_up_response.dart';
 import 'package:grocery_store_app/features/auth/data/models/user_role_response.dart';
@@ -92,4 +93,39 @@ abstract class ApiService {
   Future<void> updateProduct(
     @Body() Map<String, dynamic> mutation,
   );
+
+  @POST(graphql)
+  Future<GetAllUsersResponse> getAllUsers(
+      @Body() Map<String, dynamic> query,
+      );
+  @POST(graphql)
+  Future<void> deleteUser(
+      @Body() Map<String, dynamic> mutation,
+      );
+
+  // @POST(graphql)
+  // Future<BannersResponse> getBanners(
+  //     @Body() Map<String, dynamic> query,
+  //     );
+  //
+  // @POST(graphql)
+  // Future<ProductDetailsResponse> productDetails(
+  //     @Body() Map<String, dynamic> query,
+  //     );
+  //
+  // @POST(graphql)
+  // Future<GetAllProductResponse> getCategory(
+  //     @Body() Map<String, dynamic> query,
+  //     );
+  //
+  // @POST(graphql)
+  // Future<GetAllProductResponse> getProductsViewAll(
+  //     @Body() Map<String, dynamic> query,
+  //     );
+  //
+  // @POST(graphql)
+  // Future<GetAllProductResponse> searchProduct(
+  //     @Body() Map<String, dynamic> query,
+  //     );
+
 }
