@@ -1,6 +1,5 @@
 // ignore_for_file: lines_longer_than_80_chars
 
-
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:grocery_store_app/core/service/shared_pref/pref_keys.dart';
@@ -19,7 +18,9 @@ class DioFactory {
       dio = Dio();
       dio!
         ..options.connectTimeout = timeOut
-        ..options.receiveTimeout = timeOut;
+        ..options.receiveTimeout = timeOut
+        ..options.headers['Authorization'] =
+            'Bearer ${SharedPref().getString(PrefKeys.accessToken)}';
 
       debugPrint(
         "[USER Token] ====> ${SharedPref().getString(PrefKeys.accessToken) ?? 'NULL TOKEN'}",
@@ -37,21 +38,6 @@ class DioFactory {
       PrettyDioLogger(
         request: false,
         compact: false,
-      ),
-    );
-    dio?.interceptors.add(
-      InterceptorsWrapper(
-        onRequest: (options, handler) {
-          options.headers['Authorization'] =
-              'Bearer ${SharedPref().getString(PrefKeys.accessToken)}';
-
-          return handler.next(options);
-        },
-        // onError: (error, handler) async {
-        //   if (error.response?.statusCode == 401) {
-        //     await AppLogout().logout();
-        //   }
-        // },
       ),
     );
   }

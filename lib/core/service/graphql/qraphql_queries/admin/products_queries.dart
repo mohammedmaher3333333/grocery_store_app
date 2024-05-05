@@ -1,3 +1,4 @@
+
 import 'package:grocery_store_app/features/admin/add_products/data/models/create_product_request_body.dart';
 import 'package:grocery_store_app/features/admin/add_products/data/models/update_product_request_body.dart';
 
@@ -81,8 +82,8 @@ class ProductsQueries {
     return {
       'query': r'''
             mutation UpdateProduct($productId: ID!, $title: String!,$description: String!,$imageList:[String!]!,$price: Float!,$categoryId: Float! ) {
-          updateProduct(id: $productId,
-          changes: {
+          updateProduct(id: $productId, 
+          changes: { 
             title: $title,
             categoryId: $categoryId,
             images:$imageList,

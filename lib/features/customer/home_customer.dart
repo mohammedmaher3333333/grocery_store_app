@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 
 class HomeCustomerScreen extends StatelessWidget {
@@ -9,7 +7,7 @@ class HomeCustomerScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home Customer'),
+        title: Text('Home Customer '),
       ),
     );
   }

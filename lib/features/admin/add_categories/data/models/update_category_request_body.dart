@@ -1,5 +1,9 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+
+
+
+
 part 'update_category_request_body.g.dart';
 
 @JsonSerializable()

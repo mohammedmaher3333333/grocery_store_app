@@ -5,6 +5,7 @@ part 'categories_number_response.g.dart';
 @JsonSerializable()
 class CategoriesNumberResponse {
   CategoriesNumberResponse(this.data);
+
   factory CategoriesNumberResponse.fromJson(Map<String, dynamic> json) =>
       _$CategoriesNumberResponseFromJson(json);
 

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_store_app/core/style/images/app_images.dart';
 
-class NoNetworkScreen extends StatelessWidget {
-  const NoNetworkScreen({super.key});
+class NoNetWorkScreen extends StatelessWidget {
+  const NoNetWorkScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

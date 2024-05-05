@@ -5,7 +5,6 @@ import 'package:grocery_store_app/core/style/fonts/font_family_helper.dart';
 import 'package:grocery_store_app/core/style/theme/assets_extension.dart';
 import 'package:grocery_store_app/core/style/theme/color_extension.dart';
 
-
 ThemeData themeDark() {
   return ThemeData(
     scaffoldBackgroundColor: ColorsDark.mainColor,

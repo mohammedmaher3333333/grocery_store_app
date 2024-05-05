@@ -113,10 +113,10 @@ class AddCatgeoryItem extends StatelessWidget {
       ),
       whenComplete: () {
         context.read<GetAllAdminCategoriesBloc>().add(
-          const GetAllAdminCategoriesEvent.fetchAdminCategories(
-            isNotLoading: false,
-          ),
-        );
+              const GetAllAdminCategoriesEvent.fetchAdminCategories(
+                isNotLoading: false,
+              ),
+            );
       },
     );
   }

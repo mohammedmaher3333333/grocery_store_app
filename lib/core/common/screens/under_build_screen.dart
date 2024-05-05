@@ -3,6 +3,7 @@ import 'package:grocery_store_app/core/style/images/app_images.dart';
 
 class PageUnderBuildScreen extends StatelessWidget {
   const PageUnderBuildScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

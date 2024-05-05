@@ -19,8 +19,8 @@ class CategoriesAdminDataSource {
 
 //Create a new category
   Future<CreateCategoryResponse> createCategory(
-      CreateCategoryRequestBody body,
-      ) async {
+    CreateCategoryRequestBody body,
+  ) async {
     final response = await _graphql
         .createCategory(CategoriesQueries().createMapQuery(body: body));
     return response;

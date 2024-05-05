@@ -23,6 +23,7 @@ class _SignUpTextFormState extends State<SignUpTextForm> {
   @override
   void initState() {
     super.initState();
+
     _bloc = context.read<AuthBloc>();
   }
 

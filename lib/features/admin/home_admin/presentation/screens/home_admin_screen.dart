@@ -6,7 +6,6 @@ import 'package:grocery_store_app/core/style/images/app_images.dart';
 import 'package:grocery_store_app/core/utils/admin_drawer_list.dart';
 import 'package:grocery_store_app/features/admin/dashboard/presentation/screens/dashboard_screen.dart';
 
-
 class HomeAdminScreen extends StatefulWidget {
   const HomeAdminScreen({super.key});
 
@@ -52,7 +51,7 @@ class MenuAdminScren extends StatelessWidget {
       appBar: const AdminAppBar(
         isMain: false,
         backgroundColor: ColorsDark.blueDark,
-        title: 'Green Store',
+        title: 'Asroo Store',
       ),
       body: Column(
         children: [
@@ -60,13 +59,13 @@ class MenuAdminScren extends StatelessWidget {
             children: adminDrawerList(context)
                 .map(
                   (e) => ListTile(
-                onTap: () {
-                  onPageChanged(e.page);
-                },
-                title: e.title,
-                leading: e.icon,
-              ),
-            )
+                    onTap: () {
+                      onPageChanged(e.page);
+                    },
+                    title: e.title,
+                    leading: e.icon,
+                  ),
+                )
                 .toList(),
           ),
           Expanded(

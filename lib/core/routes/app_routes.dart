@@ -14,13 +14,7 @@ class AppRoutes {
   static const String login = 'login';
   static const String signUp = 'signUp';
   static const String homeAdmin = 'homeAdmin';
-  static const String homeCustomer = 'homeCustomer'; //////////////////////////////////
-  static const String mainCustomer = 'main-screen';
-  static const String webview = 'webView';
-  static const String productDetails = 'product-details';
-  static const String category = 'catgeory';
-  static const String productsViewAll = 'productsViewAll';
-  static const String search = 'search';
+  static const String homeCustomer = 'homeCustomer';
 
   static Route<void> onGenerateRoute(RouteSettings settings) {
     final args = settings.arguments;
@@ -32,7 +26,6 @@ class AppRoutes {
             child: const LoginScreen(),
           ),
         );
-
       case signUp:
         return BaseRoute(
           page: MultiBlocProvider(
@@ -47,51 +40,10 @@ class AppRoutes {
             child: const SignUpScreen(),
           ),
         );
-
       case homeAdmin:
-        return BaseRoute(
-          page: const HomeAdminScreen(),
-        );
+        return BaseRoute(page: const HomeAdminScreen());
       case homeCustomer:
-        return BaseRoute(
-          page: const HomeCustomerScreen(),
-        );
-
-      // case homeAdmin:
-      //   return BaseRoute(page: const HomeAdminScreen());
-      // case mainCustomer:
-      //   return BaseRoute(
-      //     page: BlocProvider(
-      //       create: (context) => sl<MainCubit>(),
-      //       child: const MainScreen(),
-      //     ),
-      //   );
-      // case webview:
-      //   return BaseRoute(
-      //     page: CustomWebView(
-      //       url: args! as String,
-      //     ),
-      //   );
-      // case productDetails:
-      //   return BaseRoute(
-      //     page: ProductDetailsScreen(
-      //       productId: args! as int,
-      //     ),
-      //   );
-      // case category:
-      //   return BaseRoute(
-      //     page: CatgeoryScreen(
-      //       categoryInfo: args! as ({int categoryId, String categoryName}),
-      //     ),
-      //   );
-      // case productsViewAll:
-      //   return BaseRoute(
-      //     page: const ProductsViewAllScreen(),
-      //   );
-      // case search:
-      //   return BaseRoute(
-      //     page: const SearchScreen(),
-      //   );
+        return BaseRoute(page: const HomeCustomerScreen());
 
       default:
         return BaseRoute(page: const PageUnderBuildScreen());

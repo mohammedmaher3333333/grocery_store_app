@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:grocery_store_app/core/app/app_cubit.dart';
+import 'package:grocery_store_app/core/app/app_cubit/app_cubit.dart';
 import 'package:grocery_store_app/core/common/animations/animate_do.dart';
 import 'package:grocery_store_app/core/common/widgets/custom_linear_button.dart';
 import 'package:grocery_store_app/core/common/widgets/text_app.dart';
@@ -37,7 +37,6 @@ class DarkAndLangButtons extends StatelessWidget {
             );
           },
         ),
-
         //Language Button
         CustomFadeInLeft(
           duration: 400,

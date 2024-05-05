@@ -5,9 +5,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocery_store_app/core/common/dialogs/custom_dialogs.dart';
 import 'package:grocery_store_app/core/common/widgets/text_app.dart';
 import 'package:grocery_store_app/core/extensions/context_extension.dart';
+import 'package:grocery_store_app/core/routes/app_routes.dart';
+import 'package:grocery_store_app/core/service/shared_pref/pref_keys.dart';
+import 'package:grocery_store_app/core/service/shared_pref/shared_pref.dart';
 import 'package:grocery_store_app/core/style/fonts/font_family_helper.dart';
 import 'package:grocery_store_app/core/style/fonts/font_weight_helper.dart';
-import 'package:grocery_store_app/core/utils/app_logout.dart';
 import 'package:grocery_store_app/features/admin/add_categories/presentation/screens/add_categories_screen.dart';
 import 'package:grocery_store_app/features/admin/add_notifications/presentation/screens/add_notifications_screen.dart';
 import 'package:grocery_store_app/features/admin/add_products/presentation/screens/add_products_screen.dart';
@@ -113,7 +115,14 @@ List<DrawerItemModel> adminDrawerList(BuildContext context) {
             textButton2: 'No',
             isLoading: false,
             onPressed: () async {
-              await AppLogout().logout();
+              final navigator = Navigator.of(context);
+              await SharedPref().removePreference(PrefKeys.accessToken);
+              await SharedPref().removePreference(PrefKeys.userId);
+              await SharedPref().removePreference(PrefKeys.userRole);
+              await navigator.pushNamedAndRemoveUntil(
+                AppRoutes.login,
+                (route) => false,
+              );
             },
           );
         },

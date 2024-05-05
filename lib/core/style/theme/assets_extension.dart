@@ -23,9 +23,9 @@ class MyAssets extends ThemeExtension<MyAssets> {
 
   @override
   ThemeExtension<MyAssets> lerp(
-      covariant ThemeExtension<MyAssets>? other,
-      double t,
-      ) {
+    covariant ThemeExtension<MyAssets>? other,
+    double t,
+  ) {
     if (other is! MyAssets) {
       return this;
     }

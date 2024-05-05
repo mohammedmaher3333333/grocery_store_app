@@ -1,3 +1,4 @@
+
 import 'package:grocery_store_app/features/auth/data/models/login_request_body.dart';
 import 'package:grocery_store_app/features/auth/data/models/sign_up_request_body.dart';
 
@@ -5,7 +6,6 @@ class AuthQueries {
   factory AuthQueries() {
     return _instance;
   }
-
   const AuthQueries._();
 
   static const AuthQueries _instance = AuthQueries._();

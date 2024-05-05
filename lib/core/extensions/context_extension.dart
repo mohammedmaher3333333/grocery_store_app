@@ -1,9 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:grocery_store_app/core/language/app_localizations.dart';
 import 'package:grocery_store_app/core/style/theme/assets_extension.dart';
 import 'package:grocery_store_app/core/style/theme/color_extension.dart';
-
 
 extension ContextExt on BuildContext {
   //color
@@ -15,12 +13,13 @@ extension ContextExt on BuildContext {
   // style
   TextStyle get textStyle => Theme.of(this).textTheme.displaySmall!;
 
-  //Language
+//Language
   String translate(String langkey) {
     return AppLocalizations.of(this)!.translate(langkey).toString();
   }
 
   //Navigation
+
   Future<dynamic> pushName(String routeName, {Object? arguments}) {
     return Navigator.of(this).pushNamed(routeName, arguments: arguments);
   }
@@ -31,7 +30,7 @@ extension ContextExt on BuildContext {
   }
 
   Future<dynamic> pushNamedAndRemoveUntil(String routeName,
-      {Object? arguments,}) {
+      {Object? arguments}) {
     return Navigator.of(this)
         .pushNamedAndRemoveUntil(routeName, (route) => false);
   }

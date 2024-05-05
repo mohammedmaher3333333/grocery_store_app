@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grocery_store_app/core/common/widgets/admin_app_bar.dart';
 import 'package:grocery_store_app/core/di/injection_container.dart';
+import 'package:grocery_store_app/core/style/colors/colors_dark.dart';
 import 'package:grocery_store_app/features/admin/add_categories/presentation/bloc/delete_category/delete_category_bloc.dart';
 import 'package:grocery_store_app/features/admin/add_categories/presentation/bloc/get_all_admin_categories/get_all_admin_categories_bloc.dart';
 import 'package:grocery_store_app/features/admin/add_categories/presentation/refactors/add_categories_body.dart';
-
-import '../../../../../core/style/colors/colors_dark.dart';
 
 class AddCategoriesScreen extends StatelessWidget {
   const AddCategoriesScreen({super.key});

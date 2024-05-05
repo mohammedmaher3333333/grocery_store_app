@@ -62,7 +62,7 @@ class DashBoardContiner extends StatelessWidget {
             SizedBox(
               height: 90,
               child: Image.asset(image),
-            )
+            ),
           ],
         ),
       ),

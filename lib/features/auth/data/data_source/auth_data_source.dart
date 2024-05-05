@@ -36,12 +36,4 @@ class AuthDataSource {
         await _graphql.signUp(AuthQueries().signUpMapQuery(body: body));
     return response;
   }
-
-  // add user id in firebase to used with notfication data base
-  // Future<void> addUserIdFirebase({required String userId}) async {
-  //   await FirebaseFirestore.instance
-  //       .collection(usersCollection)
-  //       .doc(userId)
-  //       .set({});
-  // }
 }

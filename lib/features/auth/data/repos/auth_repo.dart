@@ -1,3 +1,4 @@
+
 import 'package:grocery_store_app/core/language/lang_keys.dart';
 import 'package:grocery_store_app/core/service/graphql/api_result.dart';
 import 'package:grocery_store_app/features/auth/data/data_source/auth_data_source.dart';
@@ -38,9 +39,4 @@ class AuthRepos {
       return const ApiResult.failure('Please, try agian we have error');
     }
   }
-  //
-  // // add user id in firebase to used with notfication data base
-  // Future<void> addUserIdFirebase({required String userId}) async {
-  //   await _dataSource.addUserIdFirebase(userId: userId);
-  // }
 }

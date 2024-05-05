@@ -6,12 +6,11 @@ import 'package:grocery_store_app/core/common/animations/animate_do.dart';
 import 'package:grocery_store_app/core/common/toast/show_toast.dart';
 import 'package:grocery_store_app/core/common/widgets/custom_linear_button.dart';
 import 'package:grocery_store_app/core/common/widgets/text_app.dart';
+import 'package:grocery_store_app/core/extensions/context_extension.dart';
+import 'package:grocery_store_app/core/language/lang_keys.dart';
 import 'package:grocery_store_app/core/routes/app_routes.dart';
 import 'package:grocery_store_app/core/style/fonts/font_weight_helper.dart';
-import 'package:grocery_store_app/core/language/lang_keys.dart';
-import 'package:grocery_store_app/core/extensions/context_extension.dart';
 import 'package:grocery_store_app/features/auth/presentation/bloc/auth_bloc.dart';
-
 
 class SignUpButton extends StatelessWidget {
   const SignUpButton({super.key});
@@ -24,12 +23,13 @@ class SignUpButton extends StatelessWidget {
           ShowToast.showToastSuccessTop(
             message: context.translate(LangKeys.loggedSuccessfully),
           );
-          context.pushNamedAndRemoveUntil(AppRoutes.mainCustomer);
+          context.pushNamedAndRemoveUntil(AppRoutes.homeCustomer);
         }, error: (message) {
           ShowToast.showToastErrorTop(
             message: context.translate(message),
           );
-        });
+        },
+        );
       },
       builder: (context, state) {
         return state.maybeWhen(

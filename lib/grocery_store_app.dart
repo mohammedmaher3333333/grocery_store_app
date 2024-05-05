@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:grocery_store_app/core/app/app_cubit.dart';
+import 'package:grocery_store_app/core/app/app_cubit/app_cubit.dart';
 import 'package:grocery_store_app/core/app/connectivity_controller.dart';
 import 'package:grocery_store_app/core/app/env.variables.dart';
 import 'package:grocery_store_app/core/common/screens/no_network_screen.dart';
@@ -22,49 +22,45 @@ class GroceryStoreApp extends StatelessWidget {
       builder: (_, value, __) {
         if (value) {
           return BlocProvider(
-            create: (context) =>
-            sl<AppCubit>()
+            create: (context) => sl<AppCubit>()
               ..changeAppThemeMode(
                 sharedMode: SharedPref().getBoolean(PrefKeys.themeMode),
-              )..getSavedLanguage(),
+              )
+              ..getSavedLanguage(),
             child: ScreenUtilInit(
               designSize: const Size(375, 812),
               minTextAdapt: true,
               child: BlocBuilder<AppCubit, AppState>(
-                buildWhen: (previous,current){
+                buildWhen: (previous, current) {
                   return previous != current;
                 },
                 builder: (context, state) {
                   final cubit = context.read<AppCubit>();
                   return MaterialApp(
+                    title: 'Asroo Store',
                     debugShowCheckedModeBanner: EnvVariable.instance.debugMode,
-                    title: 'Grocery Store',
-                    theme: cubit.isDark? themeLight(): themeDark(),
+                    theme: cubit.isDark ? themeLight() : themeDark(),
                     locale: Locale(cubit.currentLangCode),
                     supportedLocales: AppLocalizationsSetup.supportedLocales,
-                    localeResolutionCallback:
-                    AppLocalizationsSetup.localeResolutionCallback,
                     localizationsDelegates:
                     AppLocalizationsSetup.localizationsDelegates,
+                    localeResolutionCallback:
+                    AppLocalizationsSetup.localeResolutionCallback,
                     builder: (context, widget) {
-                      return GestureDetector(
-                        onTap: () {
-                          FocusManager.instance.primaryFocus?.unfocus();
-                        },
-                        child: Scaffold(
-                          body: Builder(
-                            builder: (context) {
-                              ConnectivityController.instance.init();
-                              return widget!;
-                            },
-                          ),
+                      return Scaffold(
+                        body: Builder(
+                          builder: (context) {
+                            ConnectivityController.instance.init();
+                            return widget!;
+                          },
                         ),
                       );
                     },
                     navigatorKey: sl<GlobalKey<NavigatorState>>(),
                     onGenerateRoute: AppRoutes.onGenerateRoute,
                     initialRoute: SharedPref()
-                        .getString(PrefKeys.accessToken) !=null
+                        .getString(PrefKeys.accessToken) !=
+                        null
                         ? SharedPref().getString(PrefKeys.userRole) != 'admin'
                         ? AppRoutes.homeCustomer
                         : AppRoutes.homeAdmin
@@ -76,13 +72,9 @@ class GroceryStoreApp extends StatelessWidget {
           );
         } else {
           return MaterialApp(
+            title: 'No NetWork ',
             debugShowCheckedModeBanner: EnvVariable.instance.debugMode,
-            title: 'Grocery Store Network',
-            theme: ThemeData(
-              colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-              useMaterial3: true,
-            ),
-            home: const NoNetworkScreen(),
+            home: const NoNetWorkScreen(),
           );
         }
       },

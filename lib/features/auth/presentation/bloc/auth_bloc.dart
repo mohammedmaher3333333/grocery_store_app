@@ -47,7 +47,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         final user = await _repo.userRole(token);
         await SharedPref().setInt(PrefKeys.userId, user.userId ?? 0);
         await SharedPref().setString(PrefKeys.userRole, user.userRole ?? '');
-        //await _repo.addUserIdFirebase(userId: user.userId.toString());
         emit(AuthState.success(userRole: user.userRole ?? ''));
       },
       failure: (error) {
@@ -58,9 +57,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   // signup and login to take user token
   FutureOr<void> _signUp(
-      SignUpEvent event,
-      Emitter<AuthState> emit,
-      ) async {
+    SignUpEvent event,
+    Emitter<AuthState> emit,
+  ) async {
     emit(const AuthState.loading());
     final result = await _repo.signUp(
       SignUpRequestBody(

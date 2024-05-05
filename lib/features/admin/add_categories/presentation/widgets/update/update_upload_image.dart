@@ -85,7 +85,7 @@ class UpdateUploadImage extends StatelessWidget {
                           color: Colors.white,
                         ),
                       ),
-                    ),
+                    )
                 ],
               ),
             );

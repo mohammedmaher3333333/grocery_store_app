@@ -35,7 +35,7 @@ class SignUpBody extends StatelessWidget {
             SizedBox(height: 10.h),
 
             //User Avatar image
-            const UserAvatarImage(),
+            const UserAvararImage(),
 
             SizedBox(height: 20.h),
 
