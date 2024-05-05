@@ -23,6 +23,10 @@ import 'package:grocery_store_app/features/admin/dashboard/data/repos/dashboard_
 import 'package:grocery_store_app/features/admin/dashboard/presentation/bloc/categories_number/categories_number_bloc.dart';
 import 'package:grocery_store_app/features/admin/dashboard/presentation/bloc/products_number/products_number_bloc.dart';
 import 'package:grocery_store_app/features/admin/dashboard/presentation/bloc/users_number/users_number_bloc.dart';
+import 'package:grocery_store_app/features/admin/users/data/data_sources/users_data_source.dart';
+import 'package:grocery_store_app/features/admin/users/data/repos/users_repo.dart';
+import 'package:grocery_store_app/features/admin/users/presentation/bloc/delete_user/delete_user_bloc.dart';
+import 'package:grocery_store_app/features/admin/users/presentation/bloc/get_all_users/get_all_users_bloc.dart';
 import 'package:grocery_store_app/features/auth/data/data_source/auth_data_source.dart';
 import 'package:grocery_store_app/features/auth/data/repos/auth_repo.dart';
 import 'package:grocery_store_app/features/auth/presentation/bloc/auth_bloc.dart';
@@ -35,6 +39,16 @@ Future<void> setupInjector() async {
   await _initDashBoard();
   await _initCategoriesAdmin();
   await _initProductsAdmin();
+  await _initUsersAdmin();
+  // await _initAddNotification();
+  // await _initMain();
+  // await _initProfile();
+  // await _initHome();
+  // await _initProductDetails();
+  // await _initCategory();
+  // await _initProductsViewAll();
+  // await _initSearch();
+  // await _initFavorites();
 }
 
 Future<void> _initCore() async {
@@ -85,3 +99,71 @@ Future<void> _initProductsAdmin() async {
     ..registerFactory(() => DeleteProductBloc(sl()))
     ..registerFactory(() => UpdateProductBloc(sl()));
 }
+Future<void> _initUsersAdmin() async {
+  sl
+    ..registerLazySingleton(() => UsersRepo(sl()))
+    ..registerLazySingleton(() => UserDataSource(sl()))
+    ..registerFactory(() => GetAllUsersBloc(sl()))
+    ..registerFactory(() => DeleteUserBloc(sl()));
+}
+
+// Future<void> _initAddNotification() async {
+//   sl
+//     ..registerFactory(AddNotificationBloc.new)
+//     ..registerFactory(GetAllNotificationAdminBloc.new)
+//     ..registerFactory(() => SendNotificationBloc(sl()))
+//     ..registerLazySingleton(() => AddNotificationRepo(sl()))
+//     ..registerLazySingleton(AddNotificationDataSource.new);
+// }
+//
+// Future<void> _initMain() async {
+//   sl.registerFactory(MainCubit.new);
+// }
+//
+// Future<void> _initProfile() async {
+//   sl
+//     ..registerFactory(() => ProfileBloc(sl()))
+//     ..registerLazySingleton(() => ProfileRepo(sl()))
+//     ..registerLazySingleton(() => ProfileDataSource(sl()));
+// }
+//
+// Future<void> _initHome() async {
+//   sl
+//     ..registerFactory(() => GetBannersBloc(sl()))
+//     ..registerFactory(() => GetAllCategoriesBloc(sl()))
+//     ..registerFactory(() => GetAllProductsBloc(sl()))
+//     ..registerLazySingleton(() => HomeRepo(sl()))
+//     ..registerLazySingleton(() => HomeDataSource(sl()));
+// }
+//
+// Future<void> _initProductDetails() async {
+//   sl
+//     ..registerFactory(() => ProductDetailsBloc(sl()))
+//     ..registerLazySingleton(() => ProductDetailsRepo(sl()))
+//     ..registerLazySingleton(() => ProductDetailsDataSource(sl()));
+// }
+//
+// Future<void> _initCategory() async {
+//   sl
+//     ..registerFactory(() => GetCategoryBloc(sl()))
+//     ..registerLazySingleton(() => CatgeoryRepo(sl()))
+//     ..registerLazySingleton(() => CatgeoryDataSource(sl()));
+// }
+//
+// Future<void> _initProductsViewAll() async {
+//   sl
+//     ..registerFactory(() => ProductsViewAllBloc(sl()))
+//     ..registerLazySingleton(() => ProductsViewAllRepo(sl()))
+//     ..registerLazySingleton(() => ProductsViewAllDataSource(sl()));
+// }
+//
+// Future<void> _initSearch() async {
+//   sl
+//     ..registerFactory(() => SearchBloc(sl()))
+//     ..registerLazySingleton(() => SearchRepo(sl()))
+//     ..registerLazySingleton(() => SearchDataSource(sl()));
+// }
+//
+// Future<void> _initFavorites() async {
+//   sl.registerFactory(FavoritesCubit.new);
+// }
