@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grocery_store_app/core/app/bloc_observer.dart';
 import 'package:grocery_store_app/core/app/env.variables.dart';
 import 'package:grocery_store_app/core/di/injection_container.dart';
+import 'package:grocery_store_app/core/service/push_notification/firebase_cloud_messaging.dart';
 import 'package:grocery_store_app/core/service/shared_pref/shared_pref.dart';
 
 import 'firebase_options.dart';
@@ -24,6 +25,8 @@ void main() async {
   await SharedPref().instantiatePreferences();
 
   await setupInjector();
+
+  await FirebaseCloudMessaging().init();
 
   Bloc.observer= AppBlocObserver();
 
