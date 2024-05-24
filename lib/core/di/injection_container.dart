@@ -12,6 +12,7 @@ import 'package:grocery_store_app/features/admin/add_categories/presentation/blo
 import 'package:grocery_store_app/features/admin/add_categories/presentation/bloc/delete_category/delete_category_bloc.dart';
 import 'package:grocery_store_app/features/admin/add_categories/presentation/bloc/get_all_admin_categories/get_all_admin_categories_bloc.dart';
 import 'package:grocery_store_app/features/admin/add_categories/presentation/bloc/update_category/update_category_bloc.dart';
+import 'package:grocery_store_app/features/admin/add_notifications/presentation/bloc/add_notification/add_notification_bloc.dart';
 import 'package:grocery_store_app/features/admin/add_products/data/data_source/products_admin_data_source.dart';
 import 'package:grocery_store_app/features/admin/add_products/data/repos/products_admin_repo.dart';
 import 'package:grocery_store_app/features/admin/add_products/presentation/bloc/create_product/create_prodcut_bloc.dart';
@@ -40,7 +41,7 @@ Future<void> setupInjector() async {
   await _initCategoriesAdmin();
   await _initProductsAdmin();
   await _initUsersAdmin();
-  // await _initAddNotification();
+  await _initAddNotification();
   // await _initMain();
   // await _initProfile();
   // await _initHome();
@@ -107,15 +108,16 @@ Future<void> _initUsersAdmin() async {
     ..registerFactory(() => DeleteUserBloc(sl()));
 }
 
-// Future<void> _initAddNotification() async {
-//   sl
-//     ..registerFactory(AddNotificationBloc.new)
-//     ..registerFactory(GetAllNotificationAdminBloc.new)
-//     ..registerFactory(() => SendNotificationBloc(sl()))
-//     ..registerLazySingleton(() => AddNotificationRepo(sl()))
-//     ..registerLazySingleton(AddNotificationDataSource.new);
-// }
-//
+Future<void> _initAddNotification() async {
+  sl
+    ..registerFactory(AddNotificationBloc.new)
+    // ..registerFactory(GetAllNotificationAdminBloc.new)
+    // ..registerFactory(() => SendNotificationBloc(sl()))
+    // ..registerLazySingleton(() => AddNotificationRepo(sl()))
+    // ..registerLazySingleton(AddNotificationDataSource.new)
+  ;
+}
+
 // Future<void> _initMain() async {
 //   sl.registerFactory(MainCubit.new);
 // }

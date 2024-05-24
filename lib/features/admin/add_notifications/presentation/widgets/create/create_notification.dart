@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocery_store_app/core/common/bottom_shet/custom_bottom_sheet.dart';
 import 'package:grocery_store_app/core/common/widgets/custom_button.dart';
 import 'package:grocery_store_app/core/common/widgets/text_app.dart';
+import 'package:grocery_store_app/core/di/injection_container.dart';
 import 'package:grocery_store_app/core/extensions/context_extension.dart';
 import 'package:grocery_store_app/core/style/colors/colors_dark.dart';
 import 'package:grocery_store_app/core/style/fonts/font_family_helper.dart';
 import 'package:grocery_store_app/core/style/fonts/font_weight_helper.dart';
+import 'package:grocery_store_app/features/admin/add_notifications/presentation/bloc/add_notification/add_notification_bloc.dart';
 import 'package:grocery_store_app/features/admin/add_notifications/presentation/widgets/create/create_notification_bottom_sheet.dart';
 
 class CreateNotification extends StatelessWidget {
@@ -31,7 +34,10 @@ class CreateNotification extends StatelessWidget {
           onPressed: () {
             CustomBottomSheet.showModalBottomSheetContainer(
               context: context,
-              widget: const CreateNotificationBottomSheet(),
+              widget: BlocProvider(
+                create: (context) => sl<AddNotificationBloc>(),
+                child: const CreateNotificationBottomSheet(),
+              ),
             );
           },
           backgroundColor: ColorsDark.blueDark,
@@ -60,10 +66,12 @@ class CreateNotification extends StatelessWidget {
 // import 'package:grocery_store_app/core/common/bottom_shet/custom_bottom_sheet.dart';
 // import 'package:grocery_store_app/core/common/widgets/custom_button.dart';
 // import 'package:grocery_store_app/core/common/widgets/text_app.dart';
+// import 'package:grocery_store_app/core/di/injection_container.dart';
 // import 'package:grocery_store_app/core/extensions/context_extension.dart';
 // import 'package:grocery_store_app/core/style/colors/colors_dark.dart';
 // import 'package:grocery_store_app/core/style/fonts/font_family_helper.dart';
 // import 'package:grocery_store_app/core/style/fonts/font_weight_helper.dart';
+// import 'package:grocery_store_app/features/admin/add_notifications/presentation/bloc/add_notification/add_notification_bloc.dart';
 // import 'package:grocery_store_app/features/admin/add_notifications/presentation/widgets/create/create_notification_bottom_sheet.dart';
 //
 // class CreateNotification extends StatelessWidget {
