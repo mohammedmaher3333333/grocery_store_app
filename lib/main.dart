@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grocery_store_app/core/app/bloc_observer.dart';
 import 'package:grocery_store_app/core/app/env.variables.dart';
 import 'package:grocery_store_app/core/di/injection_container.dart';
+import 'package:grocery_store_app/core/service/hive/hive_database.dart';
 import 'package:grocery_store_app/core/service/push_notification/firebase_cloud_messaging.dart';
 import 'package:grocery_store_app/core/service/shared_pref/shared_pref.dart';
 
@@ -16,10 +17,8 @@ void main() async {
 
   await EnvVariable.instance.init(envType: EnvTypeEnum.dev);
 
-
-
   await Firebase.initializeApp(
-   options: DefaultFirebaseOptions.currentPlatform,
+    options: DefaultFirebaseOptions.currentPlatform,
   );
 
   await SharedPref().instantiatePreferences();
@@ -28,7 +27,9 @@ void main() async {
 
   await FirebaseCloudMessaging().init();
 
-  Bloc.observer= AppBlocObserver();
+  await HiveDatabase().setup();
+
+  Bloc.observer = AppBlocObserver();
 
   await SystemChrome.setPreferredOrientations(
     [DeviceOrientation.portraitDown, DeviceOrientation.portraitUp],
