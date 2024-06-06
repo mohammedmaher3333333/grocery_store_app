@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'add_notification_bloc.dart';
+part of 'send_notification_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,71 +15,64 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$AddNotificationEvent {
+mixin _$SendNotificationEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(AddNotificationModel notificationModel)
-        createNotification,
-    required TResult Function(AddNotificationModel notificationModel)
-        deleteNotification,
+    required TResult Function(
+            String title, String body, int productId, int indexId)
+        sendNotifications,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(AddNotificationModel notificationModel)?
-        createNotification,
-    TResult? Function(AddNotificationModel notificationModel)?
-        deleteNotification,
+    TResult? Function(String title, String body, int productId, int indexId)?
+        sendNotifications,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(AddNotificationModel notificationModel)?
-        createNotification,
-    TResult Function(AddNotificationModel notificationModel)?
-        deleteNotification,
+    TResult Function(String title, String body, int productId, int indexId)?
+        sendNotifications,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(CreateNotificationEvent value) createNotification,
-    required TResult Function(DeleteNotificationEvent value) deleteNotification,
+    required TResult Function(NewSendNotificationsEvent value)
+        sendNotifications,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(CreateNotificationEvent value)? createNotification,
-    TResult? Function(DeleteNotificationEvent value)? deleteNotification,
+    TResult? Function(NewSendNotificationsEvent value)? sendNotifications,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(CreateNotificationEvent value)? createNotification,
-    TResult Function(DeleteNotificationEvent value)? deleteNotification,
+    TResult Function(NewSendNotificationsEvent value)? sendNotifications,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $AddNotificationEventCopyWith<$Res> {
-  factory $AddNotificationEventCopyWith(AddNotificationEvent value,
-          $Res Function(AddNotificationEvent) then) =
-      _$AddNotificationEventCopyWithImpl<$Res, AddNotificationEvent>;
+abstract class $SendNotificationEventCopyWith<$Res> {
+  factory $SendNotificationEventCopyWith(SendNotificationEvent value,
+          $Res Function(SendNotificationEvent) then) =
+      _$SendNotificationEventCopyWithImpl<$Res, SendNotificationEvent>;
 }
 
 /// @nodoc
-class _$AddNotificationEventCopyWithImpl<$Res,
-        $Val extends AddNotificationEvent>
-    implements $AddNotificationEventCopyWith<$Res> {
-  _$AddNotificationEventCopyWithImpl(this._value, this._then);
+class _$SendNotificationEventCopyWithImpl<$Res,
+        $Val extends SendNotificationEvent>
+    implements $SendNotificationEventCopyWith<$Res> {
+  _$SendNotificationEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -96,7 +89,7 @@ abstract class _$$StartedImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$StartedImplCopyWithImpl<$Res>
-    extends _$AddNotificationEventCopyWithImpl<$Res, _$StartedImpl>
+    extends _$SendNotificationEventCopyWithImpl<$Res, _$StartedImpl>
     implements _$$StartedImplCopyWith<$Res> {
   __$$StartedImplCopyWithImpl(
       _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
@@ -110,7 +103,7 @@ class _$StartedImpl implements _Started {
 
   @override
   String toString() {
-    return 'AddNotificationEvent.started()';
+    return 'SendNotificationEvent.started()';
   }
 
   @override
@@ -126,10 +119,9 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(AddNotificationModel notificationModel)
-        createNotification,
-    required TResult Function(AddNotificationModel notificationModel)
-        deleteNotification,
+    required TResult Function(
+            String title, String body, int productId, int indexId)
+        sendNotifications,
   }) {
     return started();
   }
@@ -138,10 +130,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(AddNotificationModel notificationModel)?
-        createNotification,
-    TResult? Function(AddNotificationModel notificationModel)?
-        deleteNotification,
+    TResult? Function(String title, String body, int productId, int indexId)?
+        sendNotifications,
   }) {
     return started?.call();
   }
@@ -150,10 +140,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(AddNotificationModel notificationModel)?
-        createNotification,
-    TResult Function(AddNotificationModel notificationModel)?
-        deleteNotification,
+    TResult Function(String title, String body, int productId, int indexId)?
+        sendNotifications,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -166,8 +154,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(CreateNotificationEvent value) createNotification,
-    required TResult Function(DeleteNotificationEvent value) deleteNotification,
+    required TResult Function(NewSendNotificationsEvent value)
+        sendNotifications,
   }) {
     return started(this);
   }
@@ -176,8 +164,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(CreateNotificationEvent value)? createNotification,
-    TResult? Function(DeleteNotificationEvent value)? deleteNotification,
+    TResult? Function(NewSendNotificationsEvent value)? sendNotifications,
   }) {
     return started?.call(this);
   }
@@ -186,8 +173,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(CreateNotificationEvent value)? createNotification,
-    TResult Function(DeleteNotificationEvent value)? deleteNotification,
+    TResult Function(NewSendNotificationsEvent value)? sendNotifications,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -197,112 +183,135 @@ class _$StartedImpl implements _Started {
   }
 }
 
-abstract class _Started implements AddNotificationEvent {
+abstract class _Started implements SendNotificationEvent {
   const factory _Started() = _$StartedImpl;
 }
 
 /// @nodoc
-abstract class _$$CreateNotificationEventImplCopyWith<$Res> {
-  factory _$$CreateNotificationEventImplCopyWith(
-          _$CreateNotificationEventImpl value,
-          $Res Function(_$CreateNotificationEventImpl) then) =
-      __$$CreateNotificationEventImplCopyWithImpl<$Res>;
+abstract class _$$NewSendNotificationsEventImplCopyWith<$Res> {
+  factory _$$NewSendNotificationsEventImplCopyWith(
+          _$NewSendNotificationsEventImpl value,
+          $Res Function(_$NewSendNotificationsEventImpl) then) =
+      __$$NewSendNotificationsEventImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({AddNotificationModel notificationModel});
+  $Res call({String title, String body, int productId, int indexId});
 }
 
 /// @nodoc
-class __$$CreateNotificationEventImplCopyWithImpl<$Res>
-    extends _$AddNotificationEventCopyWithImpl<$Res,
-        _$CreateNotificationEventImpl>
-    implements _$$CreateNotificationEventImplCopyWith<$Res> {
-  __$$CreateNotificationEventImplCopyWithImpl(
-      _$CreateNotificationEventImpl _value,
-      $Res Function(_$CreateNotificationEventImpl) _then)
+class __$$NewSendNotificationsEventImplCopyWithImpl<$Res>
+    extends _$SendNotificationEventCopyWithImpl<$Res,
+        _$NewSendNotificationsEventImpl>
+    implements _$$NewSendNotificationsEventImplCopyWith<$Res> {
+  __$$NewSendNotificationsEventImplCopyWithImpl(
+      _$NewSendNotificationsEventImpl _value,
+      $Res Function(_$NewSendNotificationsEventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? notificationModel = null,
+    Object? title = null,
+    Object? body = null,
+    Object? productId = null,
+    Object? indexId = null,
   }) {
-    return _then(_$CreateNotificationEventImpl(
-      notificationModel: null == notificationModel
-          ? _value.notificationModel
-          : notificationModel // ignore: cast_nullable_to_non_nullable
-              as AddNotificationModel,
+    return _then(_$NewSendNotificationsEventImpl(
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      body: null == body
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as String,
+      productId: null == productId
+          ? _value.productId
+          : productId // ignore: cast_nullable_to_non_nullable
+              as int,
+      indexId: null == indexId
+          ? _value.indexId
+          : indexId // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
 /// @nodoc
 
-class _$CreateNotificationEventImpl implements CreateNotificationEvent {
-  const _$CreateNotificationEventImpl({required this.notificationModel});
+class _$NewSendNotificationsEventImpl implements NewSendNotificationsEvent {
+  const _$NewSendNotificationsEventImpl(
+      {required this.title,
+      required this.body,
+      required this.productId,
+      required this.indexId});
 
   @override
-  final AddNotificationModel notificationModel;
+  final String title;
+  @override
+  final String body;
+  @override
+  final int productId;
+  @override
+  final int indexId;
 
   @override
   String toString() {
-    return 'AddNotificationEvent.createNotification(notificationModel: $notificationModel)';
+    return 'SendNotificationEvent.sendNotifications(title: $title, body: $body, productId: $productId, indexId: $indexId)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CreateNotificationEventImpl &&
-            (identical(other.notificationModel, notificationModel) ||
-                other.notificationModel == notificationModel));
+            other is _$NewSendNotificationsEventImpl &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.body, body) || other.body == body) &&
+            (identical(other.productId, productId) ||
+                other.productId == productId) &&
+            (identical(other.indexId, indexId) || other.indexId == indexId));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, notificationModel);
+  int get hashCode => Object.hash(runtimeType, title, body, productId, indexId);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$CreateNotificationEventImplCopyWith<_$CreateNotificationEventImpl>
-      get copyWith => __$$CreateNotificationEventImplCopyWithImpl<
-          _$CreateNotificationEventImpl>(this, _$identity);
+  _$$NewSendNotificationsEventImplCopyWith<_$NewSendNotificationsEventImpl>
+      get copyWith => __$$NewSendNotificationsEventImplCopyWithImpl<
+          _$NewSendNotificationsEventImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(AddNotificationModel notificationModel)
-        createNotification,
-    required TResult Function(AddNotificationModel notificationModel)
-        deleteNotification,
+    required TResult Function(
+            String title, String body, int productId, int indexId)
+        sendNotifications,
   }) {
-    return createNotification(notificationModel);
+    return sendNotifications(title, body, productId, indexId);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(AddNotificationModel notificationModel)?
-        createNotification,
-    TResult? Function(AddNotificationModel notificationModel)?
-        deleteNotification,
+    TResult? Function(String title, String body, int productId, int indexId)?
+        sendNotifications,
   }) {
-    return createNotification?.call(notificationModel);
+    return sendNotifications?.call(title, body, productId, indexId);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(AddNotificationModel notificationModel)?
-        createNotification,
-    TResult Function(AddNotificationModel notificationModel)?
-        deleteNotification,
+    TResult Function(String title, String body, int productId, int indexId)?
+        sendNotifications,
     required TResult orElse(),
   }) {
-    if (createNotification != null) {
-      return createNotification(notificationModel);
+    if (sendNotifications != null) {
+      return sendNotifications(title, body, productId, indexId);
     }
     return orElse();
   }
@@ -311,206 +320,57 @@ class _$CreateNotificationEventImpl implements CreateNotificationEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(CreateNotificationEvent value) createNotification,
-    required TResult Function(DeleteNotificationEvent value) deleteNotification,
+    required TResult Function(NewSendNotificationsEvent value)
+        sendNotifications,
   }) {
-    return createNotification(this);
+    return sendNotifications(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(CreateNotificationEvent value)? createNotification,
-    TResult? Function(DeleteNotificationEvent value)? deleteNotification,
+    TResult? Function(NewSendNotificationsEvent value)? sendNotifications,
   }) {
-    return createNotification?.call(this);
+    return sendNotifications?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(CreateNotificationEvent value)? createNotification,
-    TResult Function(DeleteNotificationEvent value)? deleteNotification,
+    TResult Function(NewSendNotificationsEvent value)? sendNotifications,
     required TResult orElse(),
   }) {
-    if (createNotification != null) {
-      return createNotification(this);
+    if (sendNotifications != null) {
+      return sendNotifications(this);
     }
     return orElse();
   }
 }
 
-abstract class CreateNotificationEvent implements AddNotificationEvent {
-  const factory CreateNotificationEvent(
-          {required final AddNotificationModel notificationModel}) =
-      _$CreateNotificationEventImpl;
+abstract class NewSendNotificationsEvent implements SendNotificationEvent {
+  const factory NewSendNotificationsEvent(
+      {required final String title,
+      required final String body,
+      required final int productId,
+      required final int indexId}) = _$NewSendNotificationsEventImpl;
 
-  AddNotificationModel get notificationModel;
+  String get title;
+  String get body;
+  int get productId;
+  int get indexId;
   @JsonKey(ignore: true)
-  _$$CreateNotificationEventImplCopyWith<_$CreateNotificationEventImpl>
+  _$$NewSendNotificationsEventImplCopyWith<_$NewSendNotificationsEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$DeleteNotificationEventImplCopyWith<$Res> {
-  factory _$$DeleteNotificationEventImplCopyWith(
-          _$DeleteNotificationEventImpl value,
-          $Res Function(_$DeleteNotificationEventImpl) then) =
-      __$$DeleteNotificationEventImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({AddNotificationModel notificationModel});
-}
-
-/// @nodoc
-class __$$DeleteNotificationEventImplCopyWithImpl<$Res>
-    extends _$AddNotificationEventCopyWithImpl<$Res,
-        _$DeleteNotificationEventImpl>
-    implements _$$DeleteNotificationEventImplCopyWith<$Res> {
-  __$$DeleteNotificationEventImplCopyWithImpl(
-      _$DeleteNotificationEventImpl _value,
-      $Res Function(_$DeleteNotificationEventImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? notificationModel = null,
-  }) {
-    return _then(_$DeleteNotificationEventImpl(
-      notificationModel: null == notificationModel
-          ? _value.notificationModel
-          : notificationModel // ignore: cast_nullable_to_non_nullable
-              as AddNotificationModel,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$DeleteNotificationEventImpl implements DeleteNotificationEvent {
-  const _$DeleteNotificationEventImpl({required this.notificationModel});
-
-  @override
-  final AddNotificationModel notificationModel;
-
-  @override
-  String toString() {
-    return 'AddNotificationEvent.deleteNotification(notificationModel: $notificationModel)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$DeleteNotificationEventImpl &&
-            (identical(other.notificationModel, notificationModel) ||
-                other.notificationModel == notificationModel));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, notificationModel);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$DeleteNotificationEventImplCopyWith<_$DeleteNotificationEventImpl>
-      get copyWith => __$$DeleteNotificationEventImplCopyWithImpl<
-          _$DeleteNotificationEventImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function(AddNotificationModel notificationModel)
-        createNotification,
-    required TResult Function(AddNotificationModel notificationModel)
-        deleteNotification,
-  }) {
-    return deleteNotification(notificationModel);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function(AddNotificationModel notificationModel)?
-        createNotification,
-    TResult? Function(AddNotificationModel notificationModel)?
-        deleteNotification,
-  }) {
-    return deleteNotification?.call(notificationModel);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function(AddNotificationModel notificationModel)?
-        createNotification,
-    TResult Function(AddNotificationModel notificationModel)?
-        deleteNotification,
-    required TResult orElse(),
-  }) {
-    if (deleteNotification != null) {
-      return deleteNotification(notificationModel);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(CreateNotificationEvent value) createNotification,
-    required TResult Function(DeleteNotificationEvent value) deleteNotification,
-  }) {
-    return deleteNotification(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
-    TResult? Function(CreateNotificationEvent value)? createNotification,
-    TResult? Function(DeleteNotificationEvent value)? deleteNotification,
-  }) {
-    return deleteNotification?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(CreateNotificationEvent value)? createNotification,
-    TResult Function(DeleteNotificationEvent value)? deleteNotification,
-    required TResult orElse(),
-  }) {
-    if (deleteNotification != null) {
-      return deleteNotification(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class DeleteNotificationEvent implements AddNotificationEvent {
-  const factory DeleteNotificationEvent(
-          {required final AddNotificationModel notificationModel}) =
-      _$DeleteNotificationEventImpl;
-
-  AddNotificationModel get notificationModel;
-  @JsonKey(ignore: true)
-  _$$DeleteNotificationEventImplCopyWith<_$DeleteNotificationEventImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-mixin _$AddNotificationState {
+mixin _$SendNotificationState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loading,
+    required TResult Function(int indexId) loading,
     required TResult Function() success,
     required TResult Function(String error) error,
   }) =>
@@ -518,7 +378,7 @@ mixin _$AddNotificationState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? loading,
+    TResult? Function(int indexId)? loading,
     TResult? Function()? success,
     TResult? Function(String error)? error,
   }) =>
@@ -526,7 +386,7 @@ mixin _$AddNotificationState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
+    TResult Function(int indexId)? loading,
     TResult Function()? success,
     TResult Function(String error)? error,
     required TResult orElse(),
@@ -560,17 +420,17 @@ mixin _$AddNotificationState {
 }
 
 /// @nodoc
-abstract class $AddNotificationStateCopyWith<$Res> {
-  factory $AddNotificationStateCopyWith(AddNotificationState value,
-          $Res Function(AddNotificationState) then) =
-      _$AddNotificationStateCopyWithImpl<$Res, AddNotificationState>;
+abstract class $SendNotificationStateCopyWith<$Res> {
+  factory $SendNotificationStateCopyWith(SendNotificationState value,
+          $Res Function(SendNotificationState) then) =
+      _$SendNotificationStateCopyWithImpl<$Res, SendNotificationState>;
 }
 
 /// @nodoc
-class _$AddNotificationStateCopyWithImpl<$Res,
-        $Val extends AddNotificationState>
-    implements $AddNotificationStateCopyWith<$Res> {
-  _$AddNotificationStateCopyWithImpl(this._value, this._then);
+class _$SendNotificationStateCopyWithImpl<$Res,
+        $Val extends SendNotificationState>
+    implements $SendNotificationStateCopyWith<$Res> {
+  _$SendNotificationStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -587,7 +447,7 @@ abstract class _$$InitialImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$AddNotificationStateCopyWithImpl<$Res, _$InitialImpl>
+    extends _$SendNotificationStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
@@ -601,7 +461,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'AddNotificationState.initial()';
+    return 'SendNotificationState.initial()';
   }
 
   @override
@@ -617,7 +477,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loading,
+    required TResult Function(int indexId) loading,
     required TResult Function() success,
     required TResult Function(String error) error,
   }) {
@@ -628,7 +488,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? loading,
+    TResult? Function(int indexId)? loading,
     TResult? Function()? success,
     TResult? Function(String error)? error,
   }) {
@@ -639,7 +499,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
+    TResult Function(int indexId)? loading,
     TResult Function()? success,
     TResult Function(String error)? error,
     required TResult orElse(),
@@ -688,7 +548,7 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements AddNotificationState {
+abstract class _Initial implements SendNotificationState {
   const factory _Initial() = _$InitialImpl;
 }
 
@@ -697,69 +557,95 @@ abstract class _$$LoadingStateImplCopyWith<$Res> {
   factory _$$LoadingStateImplCopyWith(
           _$LoadingStateImpl value, $Res Function(_$LoadingStateImpl) then) =
       __$$LoadingStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int indexId});
 }
 
 /// @nodoc
 class __$$LoadingStateImplCopyWithImpl<$Res>
-    extends _$AddNotificationStateCopyWithImpl<$Res, _$LoadingStateImpl>
+    extends _$SendNotificationStateCopyWithImpl<$Res, _$LoadingStateImpl>
     implements _$$LoadingStateImplCopyWith<$Res> {
   __$$LoadingStateImplCopyWithImpl(
       _$LoadingStateImpl _value, $Res Function(_$LoadingStateImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? indexId = null,
+  }) {
+    return _then(_$LoadingStateImpl(
+      indexId: null == indexId
+          ? _value.indexId
+          : indexId // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$LoadingStateImpl implements LoadingState {
-  const _$LoadingStateImpl();
+  const _$LoadingStateImpl({required this.indexId});
+
+  @override
+  final int indexId;
 
   @override
   String toString() {
-    return 'AddNotificationState.loading()';
+    return 'SendNotificationState.loading(indexId: $indexId)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoadingStateImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$LoadingStateImpl &&
+            (identical(other.indexId, indexId) || other.indexId == indexId));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, indexId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LoadingStateImplCopyWith<_$LoadingStateImpl> get copyWith =>
+      __$$LoadingStateImplCopyWithImpl<_$LoadingStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loading,
+    required TResult Function(int indexId) loading,
     required TResult Function() success,
     required TResult Function(String error) error,
   }) {
-    return loading();
+    return loading(indexId);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? loading,
+    TResult? Function(int indexId)? loading,
     TResult? Function()? success,
     TResult? Function(String error)? error,
   }) {
-    return loading?.call();
+    return loading?.call(indexId);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
+    TResult Function(int indexId)? loading,
     TResult Function()? success,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
-      return loading();
+      return loading(indexId);
     }
     return orElse();
   }
@@ -802,8 +688,13 @@ class _$LoadingStateImpl implements LoadingState {
   }
 }
 
-abstract class LoadingState implements AddNotificationState {
-  const factory LoadingState() = _$LoadingStateImpl;
+abstract class LoadingState implements SendNotificationState {
+  const factory LoadingState({required final int indexId}) = _$LoadingStateImpl;
+
+  int get indexId;
+  @JsonKey(ignore: true)
+  _$$LoadingStateImplCopyWith<_$LoadingStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -815,7 +706,7 @@ abstract class _$$SuccessStateImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$SuccessStateImplCopyWithImpl<$Res>
-    extends _$AddNotificationStateCopyWithImpl<$Res, _$SuccessStateImpl>
+    extends _$SendNotificationStateCopyWithImpl<$Res, _$SuccessStateImpl>
     implements _$$SuccessStateImplCopyWith<$Res> {
   __$$SuccessStateImplCopyWithImpl(
       _$SuccessStateImpl _value, $Res Function(_$SuccessStateImpl) _then)
@@ -829,7 +720,7 @@ class _$SuccessStateImpl implements SuccessState {
 
   @override
   String toString() {
-    return 'AddNotificationState.success()';
+    return 'SendNotificationState.success()';
   }
 
   @override
@@ -845,7 +736,7 @@ class _$SuccessStateImpl implements SuccessState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loading,
+    required TResult Function(int indexId) loading,
     required TResult Function() success,
     required TResult Function(String error) error,
   }) {
@@ -856,7 +747,7 @@ class _$SuccessStateImpl implements SuccessState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? loading,
+    TResult? Function(int indexId)? loading,
     TResult? Function()? success,
     TResult? Function(String error)? error,
   }) {
@@ -867,7 +758,7 @@ class _$SuccessStateImpl implements SuccessState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
+    TResult Function(int indexId)? loading,
     TResult Function()? success,
     TResult Function(String error)? error,
     required TResult orElse(),
@@ -916,7 +807,7 @@ class _$SuccessStateImpl implements SuccessState {
   }
 }
 
-abstract class SuccessState implements AddNotificationState {
+abstract class SuccessState implements SendNotificationState {
   const factory SuccessState() = _$SuccessStateImpl;
 }
 
@@ -931,7 +822,7 @@ abstract class _$$ErrorStateImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$ErrorStateImplCopyWithImpl<$Res>
-    extends _$AddNotificationStateCopyWithImpl<$Res, _$ErrorStateImpl>
+    extends _$SendNotificationStateCopyWithImpl<$Res, _$ErrorStateImpl>
     implements _$$ErrorStateImplCopyWith<$Res> {
   __$$ErrorStateImplCopyWithImpl(
       _$ErrorStateImpl _value, $Res Function(_$ErrorStateImpl) _then)
@@ -961,7 +852,7 @@ class _$ErrorStateImpl implements ErrorState {
 
   @override
   String toString() {
-    return 'AddNotificationState.error(error: $error)';
+    return 'SendNotificationState.error(error: $error)';
   }
 
   @override
@@ -985,7 +876,7 @@ class _$ErrorStateImpl implements ErrorState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loading,
+    required TResult Function(int indexId) loading,
     required TResult Function() success,
     required TResult Function(String error) error,
   }) {
@@ -996,7 +887,7 @@ class _$ErrorStateImpl implements ErrorState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? loading,
+    TResult? Function(int indexId)? loading,
     TResult? Function()? success,
     TResult? Function(String error)? error,
   }) {
@@ -1007,7 +898,7 @@ class _$ErrorStateImpl implements ErrorState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
+    TResult Function(int indexId)? loading,
     TResult Function()? success,
     TResult Function(String error)? error,
     required TResult orElse(),
@@ -1056,7 +947,7 @@ class _$ErrorStateImpl implements ErrorState {
   }
 }
 
-abstract class ErrorState implements AddNotificationState {
+abstract class ErrorState implements SendNotificationState {
   const factory ErrorState({required final String error}) = _$ErrorStateImpl;
 
   String get error;
