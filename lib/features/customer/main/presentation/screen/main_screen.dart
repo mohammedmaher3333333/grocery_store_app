@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_store_app/core/extensions/context_extension.dart';
+import 'package:grocery_store_app/features/customer/main/presentation/refactors/bottom_nav_bar.dart';
 import 'package:grocery_store_app/features/customer/main/presentation/refactors/main_customer_app_bar.dart';
 
 class MainScreen extends StatelessWidget {
@@ -7,7 +9,22 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MainCustomerAppBar(),
+      appBar: const MainCustomerAppBar(),
+      body: Container(
+        constraints: const BoxConstraints.expand(),
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(context.assets.homeBg!),
+            fit: BoxFit.fill,
+          ),
+        ),
+        child: Column(
+          children: [
+            Expanded(child: Text('MainScree')),
+            const MainBottomNavBar(),
+          ],
+        ),
+      ),
     );
   }
 }
