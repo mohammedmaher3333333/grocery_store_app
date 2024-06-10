@@ -5,10 +5,12 @@ import 'package:grocery_store_app/core/common/widgets/text_app.dart';
 import 'package:grocery_store_app/core/extensions/context_extension.dart';
 import 'package:grocery_store_app/core/extensions/string_exetension.dart';
 import 'package:grocery_store_app/core/style/fonts/font_weight_helper.dart';
+import 'package:grocery_store_app/features/auth/data/models/user_role_response.dart';
 
 class UserProfileInfo extends StatelessWidget {
-  const UserProfileInfo({super.key});
+  const UserProfileInfo({required this.userInfo, super.key});
 
+  final UserRoleResponse userInfo;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -20,8 +22,7 @@ class UserProfileInfo extends StatelessWidget {
             height: 80.h,
             width: 80.w,
             fit: BoxFit.fill,
-            imageUrl:
-            'https://plus.unsplash.com/premium_photo-1700575181289-b5248a43e7f0?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            imageUrl: userInfo.userImage!,
             errorWidget: (context, url, error) => const Icon(
               Icons.error,
               color: Colors.red,
@@ -31,7 +32,7 @@ class UserProfileInfo extends StatelessWidget {
         ),
         SizedBox(height: 7.h),
         TextApp(
-          text: "wALiD".toLowerCase().toCapitalized(),
+          text: userInfo.userName!.toLowerCase().toCapitalized(),
           theme: context.textStyle.copyWith(
             fontSize: 18.sp,
             fontWeight: FontWeightHelper.bold,
@@ -39,7 +40,7 @@ class UserProfileInfo extends StatelessWidget {
         ),
         SizedBox(height: 7.h),
         TextApp(
-          text: "walid@gmail.com",
+          text: userInfo.userEmail!,
           theme: context.textStyle.copyWith(
             fontSize: 14.sp,
             fontWeight: FontWeightHelper.regular,
