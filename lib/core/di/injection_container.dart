@@ -35,6 +35,7 @@ import 'package:grocery_store_app/features/admin/users/presentation/bloc/get_all
 import 'package:grocery_store_app/features/auth/data/data_source/auth_data_source.dart';
 import 'package:grocery_store_app/features/auth/data/repos/auth_repo.dart';
 import 'package:grocery_store_app/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:grocery_store_app/features/customer/main/presentation/cubit/main_cubit.dart';
 
 final sl = GetIt.instance;
 
@@ -46,7 +47,7 @@ Future<void> setupInjector() async {
   await _initProductsAdmin();
   await _initUsersAdmin();
   await _initAddNotification();
-  // await _initMain();
+  await _initMain();
   // await _initProfile();
   // await _initHome();
   // await _initProductDetails();
@@ -121,10 +122,10 @@ Future<void> _initAddNotification() async {
     ..registerLazySingleton(AddNotificationDataSource.new);
 }
 
-// Future<void> _initMain() async {
-//   sl.registerFactory(MainCubit.new);
-// }
-//
+Future<void> _initMain() async {
+  sl.registerFactory(MainCubit.new);
+}
+
 // Future<void> _initProfile() async {
 //   sl
 //     ..registerFactory(() => ProfileBloc(sl()))

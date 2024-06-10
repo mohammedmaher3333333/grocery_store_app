@@ -8,6 +8,7 @@ import 'package:grocery_store_app/features/admin/home_admin/presentation/screens
 import 'package:grocery_store_app/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:grocery_store_app/features/auth/presentation/screens/login_screen.dart';
 import 'package:grocery_store_app/features/auth/presentation/screens/sign_up_screen.dart';
+import 'package:grocery_store_app/features/customer/main/presentation/cubit/main_cubit.dart';
 import 'package:grocery_store_app/features/customer/main/presentation/screen/main_screen.dart';
 class AppRoutes {
   static const String login = 'login';
@@ -42,8 +43,12 @@ class AppRoutes {
       case homeAdmin:
         return BaseRoute(page: const HomeAdminScreen());
       case mainCustomer:
-        return BaseRoute(page: const MainScreen());
-
+        return BaseRoute(
+          page: BlocProvider(
+            create: (context) => sl<MainCubit>(),
+            child: const MainScreen(),
+          ),
+        );
       default:
         return BaseRoute(page: const PageUnderBuildScreen());
     }
