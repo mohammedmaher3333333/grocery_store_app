@@ -68,7 +68,7 @@ class GroceryStoreApp extends StatelessWidget {
                         .getString(PrefKeys.accessToken) !=
                         null
                         ? SharedPref().getString(PrefKeys.userRole) != 'admin'
-                        ? AppRoutes.homeCustomer
+                        ? AppRoutes.mainCustomer
                         : AppRoutes.homeAdmin
                         : AppRoutes.login,
                   );

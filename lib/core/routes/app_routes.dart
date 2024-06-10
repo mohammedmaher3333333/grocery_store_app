@@ -8,13 +8,12 @@ import 'package:grocery_store_app/features/admin/home_admin/presentation/screens
 import 'package:grocery_store_app/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:grocery_store_app/features/auth/presentation/screens/login_screen.dart';
 import 'package:grocery_store_app/features/auth/presentation/screens/sign_up_screen.dart';
-import 'package:grocery_store_app/features/customer/home_customer.dart';
-
+import 'package:grocery_store_app/features/customer/main/presentation/screen/main_screen.dart';
 class AppRoutes {
   static const String login = 'login';
   static const String signUp = 'signUp';
   static const String homeAdmin = 'homeAdmin';
-  static const String homeCustomer = 'homeCustomer';
+  static const String mainCustomer  = 'main-screen';
 
   static Route<void> onGenerateRoute(RouteSettings settings) {
     final args = settings.arguments;
@@ -42,8 +41,8 @@ class AppRoutes {
         );
       case homeAdmin:
         return BaseRoute(page: const HomeAdminScreen());
-      case homeCustomer:
-        return BaseRoute(page: const HomeCustomerScreen());
+      case mainCustomer:
+        return BaseRoute(page: const MainScreen());
 
       default:
         return BaseRoute(page: const PageUnderBuildScreen());
