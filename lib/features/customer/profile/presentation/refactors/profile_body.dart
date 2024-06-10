@@ -1,3 +1,28 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grocery_store_app/features/customer/profile/presentation/widgets/user_profile_info.dart';
+
+class ProfileBody extends StatelessWidget {
+  const ProfileBody({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 10.h),
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            //User Profile Info
+            UserProfileInfo(),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+
 // import 'package:asroo_store/core/common/animations/animate_do.dart';
 // import 'package:asroo_store/core/common/widgets/text_app.dart';
 // import 'package:asroo_store/core/extensions/context_extension.dart';

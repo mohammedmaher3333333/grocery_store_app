@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_store_app/features/customer/profile/presentation/refactors/profile_body.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        'Profile Screen',
-        style: TextStyle(color: Colors.white, fontSize: 20),
-      ),
+    return SizedBox(
+      height: MediaQuery.of(context).size.height,
+      width: MediaQuery.of(context).size.width,
+      child: const ProfileBody(),
     );
   }
 }
