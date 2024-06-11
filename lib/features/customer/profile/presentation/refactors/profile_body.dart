@@ -8,6 +8,7 @@ import 'package:grocery_store_app/core/language/lang_keys.dart';
 import 'package:grocery_store_app/core/style/fonts/font_weight_helper.dart';
 import 'package:grocery_store_app/features/customer/profile/presentation/bloc/bloc/profile_bloc.dart';
 import 'package:grocery_store_app/features/customer/profile/presentation/widgets/build_developer.dart';
+import 'package:grocery_store_app/features/customer/profile/presentation/widgets/build_version.dart';
 import 'package:grocery_store_app/features/customer/profile/presentation/widgets/dark_mode_change.dart';
 import 'package:grocery_store_app/features/customer/profile/presentation/widgets/language_change.dart';
 import 'package:grocery_store_app/features/customer/profile/presentation/widgets/notifications_change.dart';
@@ -74,6 +75,12 @@ class ProfileBody extends StatelessWidget {
             const CustomFadeInRight(
               duration: 400,
               child: NotificationsChange(),
+            ),
+            SizedBox(height: 20.h),
+            // Build Version
+            const CustomFadeInRight(
+              duration: 400,
+              child: BuildVersion(),
             ),
           ],
         ),
