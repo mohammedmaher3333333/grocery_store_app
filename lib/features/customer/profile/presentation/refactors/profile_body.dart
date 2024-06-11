@@ -82,6 +82,12 @@ class ProfileBody extends StatelessWidget {
               duration: 400,
               child: BuildVersion(),
             ),
+            SizedBox(height: 20.h),
+            // Logout
+            const CustomFadeInRight(
+              duration: 400,
+              child: LogOutWidget(),
+            ),
           ],
         ),
       ),
