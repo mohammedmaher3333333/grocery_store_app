@@ -5,6 +5,7 @@ import 'package:grocery_store_app/core/app/env.variables.dart';
 import 'package:grocery_store_app/core/di/injection_container.dart';
 import 'package:grocery_store_app/core/service/hive/hive_database.dart';
 import 'package:grocery_store_app/core/service/push_notification/firebase_cloud_messaging.dart';
+import 'package:grocery_store_app/core/service/push_notification/local_notfication_service.dart';
 import 'package:grocery_store_app/core/service/shared_pref/shared_pref.dart';
 
 import 'firebase_options.dart';
@@ -19,13 +20,14 @@ void main() async {
 
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
-  );
+  ).whenComplete(() {
+  FirebaseCloudMessaging().init();
+  LocalNotificationService.init();
+  });
 
   await SharedPref().instantiatePreferences();
 
   await setupInjector();
-
-  await FirebaseCloudMessaging().init();
 
   await HiveDatabase().setup();
 

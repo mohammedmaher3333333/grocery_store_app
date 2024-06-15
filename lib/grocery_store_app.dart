@@ -11,6 +11,7 @@ import 'package:grocery_store_app/core/routes/app_routes.dart';
 import 'package:grocery_store_app/core/service/shared_pref/pref_keys.dart';
 import 'package:grocery_store_app/core/service/shared_pref/shared_pref.dart';
 import 'package:grocery_store_app/core/style/theme/app_theme.dart';
+import 'package:grocery_store_app/features/customer/favorites/presentation/cubit/favorites_cubit.dart';
 
 class GroceryStoreApp extends StatelessWidget {
   const GroceryStoreApp({super.key});
@@ -21,12 +22,19 @@ class GroceryStoreApp extends StatelessWidget {
       valueListenable: ConnectivityController.instance.isConnected,
       builder: (_, value, __) {
         if (value) {
-          return BlocProvider(
-            create: (context) => sl<AppCubit>()
-              ..changeAppThemeMode(
-                sharedMode: SharedPref().getBoolean(PrefKeys.themeMode),
-              )
-              ..getSavedLanguage(),
+          return MultiBlocProvider(
+            providers: [
+              BlocProvider(
+                create: (context) => sl<FavoritesCubit>(),
+              ),
+              BlocProvider(
+                create: (context) => sl<AppCubit>()
+                  ..changeAppThemeMode(
+                    sharedMode: SharedPref().getBoolean(PrefKeys.themeMode),
+                  )
+                  ..getSavedLanguage(),
+              ),
+            ],
             child: ScreenUtilInit(
               designSize: const Size(375, 812),
               minTextAdapt: true,
@@ -37,7 +45,7 @@ class GroceryStoreApp extends StatelessWidget {
                 builder: (context, state) {
                   final cubit = context.read<AppCubit>();
                   return MaterialApp(
-                    title: 'Asroo Store',
+                    title: 'Grocery Store',
                     debugShowCheckedModeBanner: EnvVariable.instance.debugMode,
                     theme: cubit.isDark ? themeLight() : themeDark(),
                     locale: Locale(cubit.currentLangCode),
@@ -52,13 +60,12 @@ class GroceryStoreApp extends StatelessWidget {
                           FocusManager.instance.primaryFocus?.unfocus();
                         },
                         child: Scaffold(
-                            body: Builder(
-                              builder: (context) {
-                                ConnectivityController.instance.init();
-                                return widget!;
-                              },
-                            ),
-
+                          body: Builder(
+                            builder: (context) {
+                              ConnectivityController.instance.init();
+                              return widget!;
+                            },
+                          ),
                         ),
                       );
                     },
