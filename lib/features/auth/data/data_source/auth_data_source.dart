@@ -1,7 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/widgets.dart';
 import 'package:grocery_store_app/core/service/graphql/api_service.dart';
 import 'package:grocery_store_app/core/service/graphql/qraphql_queries/auth/auth_queries.dart';
+import 'package:grocery_store_app/core/utils/app_strings.dart';
 import 'package:grocery_store_app/features/auth/data/models/login_request_body.dart';
 import 'package:grocery_store_app/features/auth/data/models/login_response.dart';
 import 'package:grocery_store_app/features/auth/data/models/sign_up_request_body.dart';
@@ -35,5 +37,12 @@ class AuthDataSource {
     final response =
         await _graphql.signUp(AuthQueries().signUpMapQuery(body: body));
     return response;
+  }
+  // add user id in firebase to used with notfication data base
+  Future<void> addUserIdFirebase({required String userId}) async {
+    await FirebaseFirestore.instance
+        .collection(usersCollection)
+        .doc(userId)
+        .set({});
   }
 }

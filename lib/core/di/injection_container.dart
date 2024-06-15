@@ -35,10 +35,28 @@ import 'package:grocery_store_app/features/admin/users/presentation/bloc/get_all
 import 'package:grocery_store_app/features/auth/data/data_source/auth_data_source.dart';
 import 'package:grocery_store_app/features/auth/data/repos/auth_repo.dart';
 import 'package:grocery_store_app/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:grocery_store_app/features/customer/category/data/data_source/category_data_source.dart';
+import 'package:grocery_store_app/features/customer/category/data/repos/category_repo.dart';
+import 'package:grocery_store_app/features/customer/category/persentation/bloc/get_category/get_category_bloc.dart';
+import 'package:grocery_store_app/features/customer/favorites/presentation/cubit/favorites_cubit.dart';
+import 'package:grocery_store_app/features/customer/home/data/data_source/home_data_source.dart';
+import 'package:grocery_store_app/features/customer/home/data/repos/home_repo.dart';
+import 'package:grocery_store_app/features/customer/home/presentation/bloc/get_all_categories/get_all_categories_bloc.dart';
+import 'package:grocery_store_app/features/customer/home/presentation/bloc/get_all_products/get_all_products_bloc.dart';
+import 'package:grocery_store_app/features/customer/home/presentation/bloc/get_banners/get_banners_bloc.dart';
 import 'package:grocery_store_app/features/customer/main/presentation/cubit/main_cubit.dart';
+import 'package:grocery_store_app/features/customer/product_details/data/data_source/product_details_data_source.dart';
+import 'package:grocery_store_app/features/customer/product_details/data/repos/product_details_repo.dart';
+import 'package:grocery_store_app/features/customer/product_details/presentation/bloc/product_details/product_details_bloc.dart';
+import 'package:grocery_store_app/features/customer/products_view_all/data/data_source/products_view_all_data_source.dart';
+import 'package:grocery_store_app/features/customer/products_view_all/data/repos/products_view_all_repo.dart';
+import 'package:grocery_store_app/features/customer/products_view_all/persentation/bloc/products_view_all/products_view_all_bloc.dart';
 import 'package:grocery_store_app/features/customer/profile/data/data_source/profile_data_source.dart';
 import 'package:grocery_store_app/features/customer/profile/data/repos/profile_repo.dart';
 import 'package:grocery_store_app/features/customer/profile/presentation/bloc/bloc/profile_bloc.dart';
+import 'package:grocery_store_app/features/customer/search/data/data_source/search_data_source.dart';
+import 'package:grocery_store_app/features/customer/search/data/repo/search_repo.dart';
+import 'package:grocery_store_app/features/customer/search/presentation/bloc/search/search_bloc.dart';
 
 final sl = GetIt.instance;
 
@@ -52,12 +70,12 @@ Future<void> setupInjector() async {
   await _initAddNotification();
   await _initMain();
   await _initProfile();
-  // await _initHome();
-  // await _initProductDetails();
-  // await _initCategory();
-  // await _initProductsViewAll();
-  // await _initSearch();
-  // await _initFavorites();
+  await _initHome();
+  await _initProductDetails();
+  await _initCategory();
+  await _initProductsViewAll();
+  await _initSearch();
+  await _initFavorites();
 }
 
 Future<void> _initCore() async {
@@ -136,43 +154,43 @@ Future<void> _initProfile() async {
     ..registerLazySingleton(() => ProfileDataSource(sl()));
 }
 
-// Future<void> _initHome() async {
-//   sl
-//     ..registerFactory(() => GetBannersBloc(sl()))
-//     ..registerFactory(() => GetAllCategoriesBloc(sl()))
-//     ..registerFactory(() => GetAllProductsBloc(sl()))
-//     ..registerLazySingleton(() => HomeRepo(sl()))
-//     ..registerLazySingleton(() => HomeDataSource(sl()));
-// }
-//
-// Future<void> _initProductDetails() async {
-//   sl
-//     ..registerFactory(() => ProductDetailsBloc(sl()))
-//     ..registerLazySingleton(() => ProductDetailsRepo(sl()))
-//     ..registerLazySingleton(() => ProductDetailsDataSource(sl()));
-// }
-//
-// Future<void> _initCategory() async {
-//   sl
-//     ..registerFactory(() => GetCategoryBloc(sl()))
-//     ..registerLazySingleton(() => CatgeoryRepo(sl()))
-//     ..registerLazySingleton(() => CatgeoryDataSource(sl()));
-// }
-//
-// Future<void> _initProductsViewAll() async {
-//   sl
-//     ..registerFactory(() => ProductsViewAllBloc(sl()))
-//     ..registerLazySingleton(() => ProductsViewAllRepo(sl()))
-//     ..registerLazySingleton(() => ProductsViewAllDataSource(sl()));
-// }
-//
-// Future<void> _initSearch() async {
-//   sl
-//     ..registerFactory(() => SearchBloc(sl()))
-//     ..registerLazySingleton(() => SearchRepo(sl()))
-//     ..registerLazySingleton(() => SearchDataSource(sl()));
-// }
-//
-// Future<void> _initFavorites() async {
-//   sl.registerFactory(FavoritesCubit.new);
-// }
+Future<void> _initHome() async {
+  sl
+    ..registerFactory(() => GetBannersBloc(sl()))
+    ..registerFactory(() => GetAllCategoriesBloc(sl()))
+    ..registerFactory(() => GetAllProductsBloc(sl()))
+    ..registerLazySingleton(() => HomeRepo(sl()))
+    ..registerLazySingleton(() => HomeDataSource(sl()));
+}
+
+Future<void> _initProductDetails() async {
+  sl
+    ..registerFactory(() => ProductDetailsBloc(sl()))
+    ..registerLazySingleton(() => ProductDetailsRepo(sl()))
+    ..registerLazySingleton(() => ProductDetailsDataSource(sl()));
+}
+
+Future<void> _initCategory() async {
+  sl
+    ..registerFactory(() => GetCategoryBloc(sl()))
+    ..registerLazySingleton(() => CatgeoryRepo(sl()))
+    ..registerLazySingleton(() => CatgeoryDataSource(sl()));
+}
+
+Future<void> _initProductsViewAll() async {
+  sl
+    ..registerFactory(() => ProductsViewAllBloc(sl()))
+    ..registerLazySingleton(() => ProductsViewAllRepo(sl()))
+    ..registerLazySingleton(() => ProductsViewAllDataSource(sl()));
+}
+
+Future<void> _initSearch() async {
+  sl
+    ..registerFactory(() => SearchBloc(sl()))
+    ..registerLazySingleton(() => SearchRepo(sl()))
+    ..registerLazySingleton(() => SearchDataSource(sl()));
+}
+
+Future<void> _initFavorites() async {
+  sl.registerFactory(FavoritesCubit.new);
+}
