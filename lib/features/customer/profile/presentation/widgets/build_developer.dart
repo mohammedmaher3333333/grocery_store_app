@@ -41,7 +41,7 @@ class BuildDeveloper extends StatelessWidget {
           child: Row(
             children: [
               TextApp(
-                text: 'Asroo Stroe',
+                text: 'Green Stroe',
                 theme: context.textStyle.copyWith(
                   fontSize: 14.sp,
                   fontWeight: FontWeightHelper.regular,
