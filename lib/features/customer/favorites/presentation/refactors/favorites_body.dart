@@ -21,12 +21,13 @@ class FavorietsBody extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Icon(
-                  Icons.favorite_outline,
+                  Icons.shopping_cart_sharp,
+                  // Icons.favorite_outline,
                   color: context.color.textColor,
                   size: 150,
                 ),
                 TextApp(
-                  text: 'Choose Your Favorite Products',
+                  text: 'Choose Your Cart Products',
                   theme: context.textStyle.copyWith(
                     fontWeight: FontWeightHelper.bold,
                     fontSize: 16.sp,

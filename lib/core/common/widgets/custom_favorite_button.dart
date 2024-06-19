@@ -19,7 +19,7 @@ class CustomFavoriteButton extends StatelessWidget {
       onPressed: onTap,
       padding: EdgeInsets.zero,
       icon: Icon(
-        isFavorites ? Icons.favorite : Icons.favorite_outline,
+        isFavorites ? Icons.shopping_cart_sharp : Icons.shopping_cart_checkout_outlined,
         color:
             isFavorites ? context.color.bluePinkLight : context.color.textColor,
         size: size,
@@ -27,3 +27,5 @@ class CustomFavoriteButton extends StatelessWidget {
     );
   }
 }
+
+

@@ -36,11 +36,13 @@ class AddToCartButton extends StatelessWidget {
                 ),
               ),
               CustomLinearButton(
-                onPressed: () {},
+                onPressed: () {
+                  print('Item added to cart successfully!');
+                },
                 height: 40.h,
                 width: 140.w,
                 child: TextApp(
-                  text: 'Add to cart',
+                  text: 'For you',
                   theme: context.textStyle.copyWith(
                     fontSize: 14.sp,
                     fontWeight: FontWeightHelper.bold,

@@ -71,7 +71,7 @@ class MainBottomNavBar extends StatelessWidget {
 
                                   //Favourites Screen
                                   IconTapNavBar(
-                                    icon: AppImages.favouritesTab,
+                                    icon: AppImages.carShop,
                                     isSelected: cubit.navBarEnum ==
                                         NavBarEnum.favorites,
                                     onTap: () {
@@ -80,6 +80,7 @@ class MainBottomNavBar extends StatelessWidget {
                                       );
                                     },
                                   ),
+
                                   //Profile Screen
                                   IconTapNavBar(
                                     icon: AppImages.profileTab,

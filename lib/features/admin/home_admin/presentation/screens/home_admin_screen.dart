@@ -51,7 +51,7 @@ class MenuAdminScren extends StatelessWidget {
       appBar: const AdminAppBar(
         isMain: false,
         backgroundColor: ColorsDark.blueDark,
-        title: 'Asroo Store',
+        title: 'Green Store',
       ),
       body: Column(
         children: [

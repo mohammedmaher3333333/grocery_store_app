@@ -59,7 +59,7 @@ class MainCustomerAppBar extends StatelessWidget
             return CustomFadeInRight(
               duration: 800,
               child: TextApp(
-                text: 'Your Favorite',
+                text: 'Your Cart',
                 theme: context.textStyle.copyWith(
                   fontSize: 20.sp,
                   fontWeight: FontWeightHelper.bold,

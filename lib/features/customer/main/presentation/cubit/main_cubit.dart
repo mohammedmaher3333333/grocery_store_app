@@ -17,6 +17,8 @@ class MainCubit extends Cubit<MainState> {
       navBarEnum = NavBarEnum.notifications;
     } else if (viewEnum == NavBarEnum.favorites) {
       navBarEnum = NavBarEnum.favorites;
+    } else if (viewEnum == NavBarEnum.cart) {
+      navBarEnum = NavBarEnum.cart;
     } else if (viewEnum == NavBarEnum.profile) {
       navBarEnum = NavBarEnum.profile;
     }

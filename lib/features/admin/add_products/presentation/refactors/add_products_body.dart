@@ -22,11 +22,11 @@ class AddProductsBody extends StatelessWidget {
           Expanded(
             child: RefreshIndicator(
               onRefresh: () async {
-                // context.read<GetAllAdminProductBloc>().add(
-                //       const GetAllAdminProductEvent.getAllProducts(
-                //         isNotLoading: true,
-                //       ),
-                //     );
+                context.read<GetAllAdminProductBloc>().add(
+                      const GetAllAdminProductEvent.getAllProducts(
+                        isNotLoading: true,
+                      ),
+                    );
               },
               child: CustomScrollView(
                 slivers: [
